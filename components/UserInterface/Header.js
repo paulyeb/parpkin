@@ -9,18 +9,10 @@ const Header = () => {
     return(           
         <nav className="bg-white lg:p-12 p-3 sticky fixed mt-0 w-full z-10 top-0">
             <div className="lg:container lg:mx-auto flex flex-wrap lg:justify-between justify-between items-center">
-                <div className="hidden">
-                    <Link href="/menu">
-                        <a className="text-yellow-300 no-underline hover:no-underline font-extrabold">
-                            <span className="pl-2"><i className="em em-grinning">Menu</i></span>
-                        </a>    
-                    </Link>
-                </div>
-                
                 <div className="lg:hidden">
                     <Link href="/menu">
                         <a className="text-yellow-300 no-underline hover:no-underline font-extrabold">
-                            <FontAwesomeIcon icon = {faBars} style={{width: '80px', height: '30px', color: 'gray' }}  />
+                            <FontAwesomeIcon icon = {faBars} style={{color: 'gray' }}  />
                         </a>    
                     </Link>
                 </div>
@@ -59,7 +51,7 @@ const Header = () => {
                         <li className="mr-3">
                             <Link href="/menu">
                                 <a className="lg:inline-block text-gray-800 no-underline font-medium text-lg py-2 px-4">
-                                    <FontAwesomeIcon icon = {faCartShopping} style={{width: '80px', height: '30px', color: 'gray' }}  />
+                                    <FontAwesomeIcon icon = {faCartShopping} style={{height: '20px', color: 'gray' }}  />
                                 </a>
                             </Link>
                         </li>

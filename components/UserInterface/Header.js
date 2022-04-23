@@ -50,7 +50,7 @@ const Header = () => {
                         
                         <li className="mr-3">
                             <Link href="/menu">
-                                <a className="lg:inline-block text-gray-800 no-underline font-medium text-lg py-2 px-4">
+                                <a className="lg:inline-block text-gray-800 no-underline font-medium text-lg">
                                     <FontAwesomeIcon icon = {faCartShopping} style={{height: '20px', color: 'gray' }}  />
                                 </a>
                             </Link>

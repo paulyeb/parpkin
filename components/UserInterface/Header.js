@@ -10,11 +10,12 @@ const Header = () => {
         <nav className="bg-white lg:p-12 p-3 sticky fixed mt-0 w-full z-10 top-0">
             <div className="lg:container lg:mx-auto flex flex-wrap lg:justify-between justify-between items-center">
                 <div className="lg:hidden">
-                    <Link href="/menu">
-                        <a className="text-yellow-300 no-underline hover:no-underline font-extrabold">
-                            <FontAwesomeIcon icon = {faBars} style={{color: 'gray' }}  />
-                        </a>    
-                    </Link>
+                    <button 
+                        onClick={() => console.log('menu icon check')} 
+                        className="text-yellow-300 no-underline hover:no-underline font-extrabold"
+                    >
+                        <FontAwesomeIcon icon = {faBars} style={{color: 'gray' }}  />
+                    </button>
                 </div>
                 
                 <div className="ml">
@@ -48,12 +49,13 @@ const Header = () => {
                             </Link>
                         </li>
                         
-                        <li className="mr-3">
-                            <Link href="/menu">
-                                <a className="lg:inline-block text-gray-800 no-underline font-medium text-lg">
-                                    <FontAwesomeIcon icon = {faCartShopping} style={{height: '20px', color: 'gray' }}  />
-                                </a>
-                            </Link>
+                        <li className="mr-3"> 
+                            <button 
+                                onClick={() => console.log('cart check')} 
+                                className="lg:inline-block text-gray-800 no-underline font-medium text-lg"
+                            >
+                                <FontAwesomeIcon icon = {faCartShopping} style={{height: '20px', color: 'gray' }}  />
+                            </button>
                         </li>
                     </ul>
                 </div>

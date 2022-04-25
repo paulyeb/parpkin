@@ -1,4 +1,4 @@
-const OrderBar = () => {
+const PlaceOrderBar = () => {
     return(
         <div className="lg:p-3 p-7 flex lg:flex-row lg:justify-center flex-col justify-between items-center bg-gray-800 text-white overflow-y-auto">
             <div className="m-2 font-medium md:text-lg text-xs">
@@ -13,4 +13,4 @@ const OrderBar = () => {
     )
 }
 
-export default OrderBar;
+export default PlaceOrderBar;

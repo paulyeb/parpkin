@@ -1,17 +1,17 @@
 import Header from "../components/Layout/Header";
 import PlaceOrderBar from "../components/Layout/PlaceOrderBar";
-import Menu from "../components/Menu/Menu";
+import SpecialOffers from "../components/Special Offers/SpecialOffers"
 import Footer from "../components/Layout/Footer";
 
-const MenuPage = () => {
+const SpecialOffersPage = () => {
     return(
         <>
             <Header />
             <PlaceOrderBar />
-            <Menu />
+            <SpecialOffers />
             <Footer />
         </>
     )
 }
 
-export default MenuPage;
+export default SpecialOffersPage;

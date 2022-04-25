@@ -18,8 +18,8 @@ const Header = () => {
                     </button>
                 </div>
                 
-                <div className="ml">
-                    <Link href="/menu">
+                <div>
+                    <Link href="/">
                         <a className="text-yellow-300 no-underline hover:no-underline font-extrabold">
                             <span className="text-5xl"><i className="em em-grinning">PARPKIN</i></span>
                         </a>
@@ -31,9 +31,9 @@ const Header = () => {
                         </a>
                     </Link>
 
-                    <Link href="/menu">
-                        <a className="lg:inline-block hidden lg:py-2 lg:px-4 text-gray-800 no-underline font-medium text-xl">
-                            Deals
+                    <Link href="/specialOffers">
+                        <a className="lg:inline-block hidden lg:py-2 lg:pr-5 text-gray-800 no-underline font-medium text-xl">
+                            Special Offers
                         </a>
                     </Link>
                 </div>

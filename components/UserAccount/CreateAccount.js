@@ -59,7 +59,7 @@ const CreateAccount = () => {
                         </p>
                         <a 
                             href="/" 
-                            className="outline-none border border-gray-800 text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl"
+                            className="outline-none border border-gray-800 lg:text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl"
                         >
                             Skip, Continue As Guest
                         </a>  

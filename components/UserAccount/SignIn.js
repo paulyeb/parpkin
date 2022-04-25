@@ -9,20 +9,20 @@ const SignIn = () => {
             </div>
             <div className="lg:mt-4">
                 <div className="lg:mb-10 mb-5 font-bold text-center lg:text-2xl text-lg text-gray-800">
-                    SIGN IN OR CREATE AN ACCOUNT WITH YOUR PHONE NUMBER
+                    SIGN IN WITH YOUR PHONE NUMBER
                 </div>
                 <div className="text-2xl">
                     <form>
                         <div className="flex flex-col items-center">
                             <input 
                                 type="tel" 
-                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5" 
+                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-3/5" 
                                 placeholder="Phone Number*" 
                                 required
                             />
                             <input 
                                 type="password" 
-                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5" 
+                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-3/5" 
                                 placeholder="Enter Your Password*" 
                                 required
                             />

@@ -41,7 +41,7 @@ const Header = () => {
                 <div className="">
                     <ul className="list-reset flex justify-between flex-1 lg:flex-none items-center">
                         <li className="mr-3">
-                            <Link href="/menu">
+                            <Link href="/sign_in">
                                 <a className="lg:inline-block hidden text-gray-800 no-underline font-medium text-xl py-2 px-4">
                                     <FontAwesomeIcon icon = {faUserCircle} style={{width: '40px', color: 'gray' }}  />
                                     <span className="ml-3">Sign in</span>
@@ -54,7 +54,7 @@ const Header = () => {
                                 onClick={() => console.log('cart check')} 
                                 className="lg:inline-block text-gray-800 no-underline font-medium text-lg"
                             >
-                                <FontAwesomeIcon icon = {faCartShopping} style={{height: '25px', color: 'gray' }}  />
+                                <FontAwesomeIcon icon = {faCartShopping} style={{height: '25px', color: 'grey' }}  />
                             </button>
                         </li>
                     </ul>

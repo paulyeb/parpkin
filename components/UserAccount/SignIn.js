@@ -1,8 +1,8 @@
 const SignIn = () => {
     return(
-        <div className="container flex flex-col items-center text-center mt-40 lg:mt-20">
+        <div className="container flex flex-col items-center text-center mt-20 lg:mt-20">
             <div className="lg:mb-10 mb-5">
-                <div className="lg:mb-10 mb-5 font-medium text-lg text-gray-800">Sign In / Sign Up</div>
+                <div className="lg:mb-10 mb-5 font-medium text-lg text-gray-800">Sign In / <a href="/createAccount">Sign Up</a></div>
                 <div className="text-yellow-300 no-underline hover:no-underline font-extrabold text-5xl">
                     <i className="em em-grinning">PARPKIN</i>
                 </div>
@@ -13,12 +13,20 @@ const SignIn = () => {
                 </div>
                 <div className="text-2xl">
                     <form>
-                        <input 
-                            type="tel" 
-                            className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-3/5" 
-                            placeholder="Enter Your Phone Number Here*" 
-                            required
-                        />
+                        <div className="flex flex-col items-center">
+                            <input 
+                                type="tel" 
+                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5" 
+                                placeholder="Phone Number*" 
+                                required
+                            />
+                            <input 
+                                type="password" 
+                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5" 
+                                placeholder="Enter Your Password*" 
+                                required
+                            />
+                        </div>
                         <p 
                             className="text-sm text-gray-800 mt-10"
                         >
@@ -33,18 +41,19 @@ const SignIn = () => {
                         <p 
                             className="text-sm text-gray-800 m-3"
                         >
-                            Don't have an account? <a href="#" className="ml-1 border-b border-gray-800 font-medium text-lg">Create One Now</a>
+                            Don't have an account? <a href="/createAccount" className="ml-1 border-b border-gray-800 font-medium text-lg">Create One Now</a>
                         </p>
                         <p 
-                            className="text-sm text-gray-800 m-1"
+                            className="text-sm text-gray-800 mt-1 mb-6"
                         >
                             or
                         </p>
-                        <button 
-                            className="outline-none border border-gray-800 text-xl m-4 py-3 lg:py-3 lg:px-10 w-4/5 lg:w-3/5 font-medium rounded-3xl"    
+                        <a 
+                            href="/" 
+                            className="outline-none border border-gray-800 text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl"
                         >
-                            <a href="/">Skip, Continue As Guest</a>
-                        </button>
+                            Skip, Continue As Guest
+                        </a>  
                     </form>
                 </div>
             </div>

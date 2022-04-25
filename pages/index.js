@@ -1,14 +1,14 @@
-import Menu from "../components/Menu"
-import Categories from "../components/UserInterface/Categories";
-import Footer from "../components/UserInterface/Footer";
 import Header from "../components/UserInterface/Header";
-import Showcase from "../components/UserInterface/Showcase";
+import OrderBar from "../components/Home/OrderBar"
+import Showcase from "../components/Home/Showcase";
+import Categories from "../components/Home/Categories";
+import Footer from "../components/UserInterface/Footer";
 
 const Home = () => {
     return(
         <>
             <Header />
-            <Menu />
+            <OrderBar />
             <Showcase />
             <Categories />
             <Footer />

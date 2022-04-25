@@ -1,4 +1,4 @@
-import SignIn from "../components/SignIn"
+import SignIn from "../components/UserAccount/SignIn"
 
 const SignInPage = () => {
     return(
@@ -6,4 +6,4 @@ const SignInPage = () => {
     )
 }
 
-export default SignIn;
+export default SignInPage;

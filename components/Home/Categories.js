@@ -12,13 +12,13 @@ const Categories = () => {
                 </div>
             </div>
             <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 px-4">
-                <CategoryImage title={'BURGERS'} imageName={`/burger2.jpg`}/>
-                <CategoryImage title={'CHICKEN BUCKETS'} imageName={`/bucket2.jpg`}/>
-                <CategoryImage title={'SHAWARMA'} imageName={`/shawarma2.jpg`}/>
-                <CategoryImage title={'COMBO PACKAGES'} imageName={`/2022_04_23_00_13_IMG_1208.jpg`}/>
-                <CategoryImage title={'CHIPS & CHICKEN'} imageName={`/showcase1.jpg`}/>
-                <CategoryImage title={'PIZZA'} imageName={`/pizza1.jpg`}/>
-                <CategoryImage title={'BEVERAGES'} imageName={`/shawarma2.jpg`}/>
+                <CategoryImage title={'BURGERS'} image={`/burger2.jpg`}/>
+                <CategoryImage title={'CHICKEN BUCKETS'} image={`/bucket2.jpg`}/>
+                <CategoryImage title={'SHAWARMA'} image={`/shawarma2.jpg`}/>
+                <CategoryImage title={'COMBO PACKAGES'} image={`/2022_04_23_00_13_IMG_1208.jpg`}/>
+                <CategoryImage title={'CHIPS & CHICKEN'} image={`/showcase1.jpg`}/>
+                <CategoryImage title={'PIZZA'} image={`/pizza1.jpg`}/>
+                <CategoryImage title={'BEVERAGES'} image={`/shawarma2.jpg`}/>
             </div>
         </div>
     )

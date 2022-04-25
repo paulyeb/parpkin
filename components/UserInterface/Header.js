@@ -26,13 +26,13 @@ const Header = () => {
                     </Link>
 
                     <Link href="/menu">
-                        <a className="lg:inline-block hidden lg:mx-10 lg:py-2 lg:px-4 text-gray-800 no-underline font-medium text-lg">
+                        <a className="lg:inline-block hidden lg:mx-10 lg:py-2 lg:px-4 text-gray-800 no-underline font-medium text-xl">
                             Menu
                         </a>
                     </Link>
 
                     <Link href="/menu">
-                        <a className="lg:inline-block hidden lg:py-2 lg:px-4 text-gray-800 no-underline font-medium text-lg">
+                        <a className="lg:inline-block hidden lg:py-2 lg:px-4 text-gray-800 no-underline font-medium text-xl">
                             Deals
                         </a>
                     </Link>

@@ -1,12 +1,20 @@
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
     return(
-        <div className="text-white bg-gray-800 p-8 mt-5">
-            <div className="container flex justify-start items-start">
-                <div className="">Logo</div>
+        <div className="text-white bg-gray-800 px-20 pt-20 pb-10 mt-0">
+            <div className="container lg:flex lg:flex-row lg:justify-start lg:items-start flex flex-col items-start justify-around">
+                <div className="">
+                <Image 
+                    src="/images/company logo/BUSINESS LOGO-1.png"
+                    className="objectFit" 
+                    width={100} 
+                    height={100}  
+                />
+                </div>
                 <div className="ml-20">
                     <div  className="mb-3 font-medium">Parpkin Food</div>
                     <ul className="text-gray-300">

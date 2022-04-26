@@ -5,15 +5,15 @@ const Showcase = () => {
     return (
         <>
             <div className="flex">
-                <Image src="/2022_04_23_00_13_IMG_1208.jpg" className="objectFit" width={700} height={550} />
-                <Image src="/showcase1.jpg" width={700} height={550} />
-                <Image src="/shawarma2.jpg" width={700} height={550} />
+                <Image src="/images/combo/combo1.jpg" className="objectFit" width={700} height={550} />
+                <Image src="/images/combo/combo2.jpg" width={700} height={550} />
+                <Image src="/images/shawarma/shawarma2.jpg" width={700} height={550} />
             </div>
             <div className="bg-gray-100 flex flex-col">
-                <div className="container flex justify-center lg:justify-start items-center">
-                    <div className="mx-2 bg-yellow-300 border-2 w-3 h-7"></div>
-                    <div className="mx-2 bg-yellow-300 border-2 w-3 h-7"></div>
-                    <div className="mx-2 bg-yellow-300 border-2 w-3 h-7"></div>
+                <div className="container py-0 flex justify-center lg:justify-start">
+                    <div className="mx-1 bg-yellow-400 border-2 w-3 h-12"></div>
+                    <div className="mx-1 bg-red-500 border-2 w-3 h-10"></div>
+                    <div className="mx-1 bg-green-600 border-2 w-3 h-7"></div>
                 </div>
                 <div className="container flex justify-center lg:justify-start">
                     <h3 className="py-12 text-gray-800 no-underline hover:no-underline font-extrabold">

@@ -12,13 +12,13 @@ const Categories = () => {
                 </div>
             </div>
             <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 px-4">
-                <CategoryImage title={'BURGERS'} image={`/burger2.jpg`}/>
-                <CategoryImage title={'CHICKEN BUCKETS'} image={`/bucket2.jpg`}/>
-                <CategoryImage title={'SHAWARMA'} image={`/shawarma2.jpg`}/>
-                <CategoryImage title={'COMBO PACKAGES'} image={`/2022_04_23_00_13_IMG_1208.jpg`}/>
-                <CategoryImage title={'CHIPS & CHICKEN'} image={`/showcase1.jpg`}/>
-                <CategoryImage title={'PIZZA'} image={`/pizza1.jpg`}/>
-                <CategoryImage title={'BEVERAGES'} image={`/shawarma2.jpg`}/>
+                <CategoryImage title={'BURGERS'} image={`/images/burgers/burger2.jpg`}/>
+                <CategoryImage title={'CHICKEN BUCKETS'} image={`/images/chicken bucket/bucket2.jpg`}/>
+                <CategoryImage title={'SHAWARMA'} image={`/images/shawarma/shawarma2.jpg`}/>
+                <CategoryImage title={'COMBO PACKAGES'} image={`/images/combo/combo1.jpg`}/>
+                <CategoryImage title={'CHIPS & CHICKEN'} image={`/images/combo/combo2.jpg`}/>
+                <CategoryImage title={'PIZZA'} image={`/images/pizza/pizza1.jpg`}/>
+                <CategoryImage title={'BEVERAGES'} image={`/images/shawarma/shawarma2.jpg`}/>
             </div>
         </div>
     )

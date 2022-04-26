@@ -15,8 +15,8 @@ const Categories = () => {
                 <CategoryImage title={'BURGERS'} image={`/images/burgers/burger2.jpg`}/>
                 <CategoryImage title={'CHICKEN BUCKETS'} image={`/images/chicken bucket/bucket2.jpg`}/>
                 <CategoryImage title={'SHAWARMA'} image={`/images/shawarma/shawarma2.jpg`}/>
-                <CategoryImage title={'COMBO PACKAGES'} image={`/images/combo/combo1.jpg`}/>
                 <CategoryImage title={'CHIPS & CHICKEN'} image={`/images/combo/combo2.jpg`}/>
+                <CategoryImage title={'COMBO PACKAGES'} image={`/images/combo/combo1.jpg`}/>
                 <CategoryImage title={'PIZZA'} image={`/images/pizza/pizza1.jpg`}/>
                 <CategoryImage title={'BEVERAGES'} image={`/images/shawarma/shawarma2.jpg`}/>
             </div>

@@ -5,7 +5,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
     return(
-        <div className="text-white bg-gray-800 px-20 pt-20 pb-10 mt-0">
+        <div className="text-white bg-gray-800 px-20 pt-10 pb-10 mt-0">
             <div className="container lg:flex lg:flex-row lg:justify-start lg:items-start flex flex-col items-start justify-around">
                 <div className="">
                 <Image 

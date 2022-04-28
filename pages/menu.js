@@ -7,7 +7,6 @@ const MenuPage = () => {
     return(
         <>
             <Header />
-            <PlaceOrderBar />
             <Menu />
             <Footer />
         </>

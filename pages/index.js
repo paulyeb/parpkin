@@ -4,6 +4,7 @@ import Showcase from "../components/Home/Showcase";
 import Categories from "../components/Home/Categories";
 import Footer from "../components/Layout/Footer";
 import SpecialOffersFlyer from "../components/Special Offers/Flyer";
+import Backdrop from "../components/Layout/Backdrop";
 
 const Home = () => {
     return(
@@ -14,6 +15,7 @@ const Home = () => {
             <Categories />
             <SpecialOffersFlyer />
             <Footer />
+            {/* <Backdrop>Still a cant beeive id</Backdrop> */}
         </>
     )
 }

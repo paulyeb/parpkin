@@ -8,7 +8,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
     return(           
-        <nav className="bg-white lg:p-0 p-3 sticky mt-0 w-full z-10 top-0">
+        <nav className="bg-white lg:p-0 p-3 sticky mt-0 w-full z-10 top-0" id="navbar">
             <div className="lg:container lg:mx-auto flex flex-wrap lg:justify-between justify-between items-center">
                 <div className="lg:hidden">
                     <button 
@@ -39,7 +39,7 @@ const Header = () => {
                 
                 <div className="hidden lg:inline-block">
                     <Link href="/menu">
-                        <a className="lg:inline-block hidden lg:mx-10 lg:py-2 lg:px-4 text-gray-800 hover:border-b hover:border-gray-800 no-underline font-medium text-xl">
+                        <a className="lg:inline-block hidden visited:border-b lg:mx-10 lg:py-2 lg:px-4 text-gray-800 hover:border-b hover:border-gray-800 no-underline font-medium text-xl">
                             Menu
                         </a>
                     </Link>

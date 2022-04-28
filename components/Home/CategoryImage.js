@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CategoryImage = ({ image, title }) => {
+const CategoryImage = ({ image, title, link }) => {
     return(
-        <Link href="/menu">
+        <Link href={link}>
             <a className="max-w-sm bg-white rounded-lg mb-6 border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <Image 
                     src={image} 

@@ -7,7 +7,7 @@ const SpecialOffersFlyer = () => {
             <div className="container ml-25 p-10 font-medium text-4xl">
                 {`Deals & Special Offers`}
             </div>
-            <div className="container hidden lg:grid lg:grid-cols-3 gap-6 px-4">
+            <div className="container hidden lg:grid lg:grid-cols-3 pb-40 gap-6 px-4">
                 <Link href="/menu">
                     <a className="max-w-sm ml-2 dark:bg-gray-800 dark:border-gray-700">
                         <Image 

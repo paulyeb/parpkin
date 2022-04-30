@@ -1,4 +1,4 @@
-import CategoryImage from "./CategoryImage";
+import CategoryImage from "./CategoryItem";
 
 const Categories = () => {
     return(

@@ -1,8 +1,12 @@
+import MetaData from "../components/Layout/MetaData";
 import CreateAccount from "../components/UserAccount/CreateAccount"
 
 const CreateAccountPage = () => {
     return(
-        <CreateAccount />
+        <>
+            <MetaData title={`Parpkin | Sign Up`} />
+            <CreateAccount />
+        </>
     )
 }
 

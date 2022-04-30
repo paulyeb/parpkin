@@ -1,8 +1,12 @@
+import MetaData from "../components/Layout/MetaData";
 import SignIn from "../components/UserAccount/SignIn"
 
 const SignInPage = () => {
     return(
-        <SignIn />
+        <>
+            <MetaData title={`Parpkin | Sign In`} />
+            <SignIn />
+        </>
     )
 }
 

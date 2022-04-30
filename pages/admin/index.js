@@ -1,10 +1,12 @@
-import SignIn from "../../components/Admin/SignIn";
+import SignIn from "../../components/Admin/UserAccount/SignIn";
+import MetaData from "../../components/Layout/MetaData";
 
 const AdminHomePage = () => {
     const isLoggedIn = false;
 
     return(
         <>
+            <MetaData title={`Parpkin | Admin`} />
             {
             isLoggedIn ?
             <div>

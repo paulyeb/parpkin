@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
@@ -58,19 +58,24 @@ const Footer = () => {
                     <ul>
                         <li>
                             <a href="https://goo.gl/maps/NaR5o5T11uvWLTmu8" target="_blank">
-                                <FontAwesomeIcon icon={faLocationDot} className="m-2 p-2" style={{ color: 'yellow', width: '30px', height: '30px'}} />
+                                <FontAwesomeIcon icon={faLocationDot} className="m-2 p-2" style={{ color: 'yellow', width: '45px', height: '45px'}} />
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div className="ml-20">
+                <div className="ml-20 flex flex-col">
                     <p className="ml-3 font-medium">Interact with us</p>
-                    <a href={"https://instagram.com/parpkin?igshid=YmMyMTA2M2Y="} target="_blank">
-                        <FontAwesomeIcon icon={faInstagram} className="m-2 p-2 border border-gray-500 rounded-full" style={{ color: 'purple', width: '30px', height: '30px'}} />
-                    </a>
-                    <a href={"https://twitter.com/parpkinshawarma?s=20&t=M_5b30S8mSGpa3yO7RbAyA"} target="_blank">
-                        <FontAwesomeIcon icon={faTwitter} className="m-2 p-2 border border-gray-500 rounded-full" style={{ color: 'skyblue', width: '30px', height: '30px'}} />
-                    </a>
+                    <div className="flex">
+                        <a href={"https://instagram.com/parpkin?igshid=YmMyMTA2M2Y="} target="_blank">
+                            <FontAwesomeIcon icon={faInstagram} className="m-2 p-2 border border-gray-500 rounded-full" style={{ color: 'purple', width: '45px', height: '45px'}} />
+                        </a>
+                        <a href={"https://twitter.com/parpkinshawarma?s=20&t=M_5b30S8mSGpa3yO7RbAyA"} target="_blank">
+                            <FontAwesomeIcon icon={faTwitter} className="m-2 p-2 border border-gray-500 rounded-full" style={{ color: 'skyblue', width: '45px', height: '45px'}} />
+                        </a>
+                        <a href={"https://twitter.com/parpkinshawarma?s=20&t=M_5b30S8mSGpa3yO7RbAyA"} target="_blank">
+                            <FontAwesomeIcon icon={faFacebookF} className="m-2 p-2 border border-gray-500 rounded-full" style={{ color: 'white', width: '45px', height: '45px'}} />
+                        </a>
+                    </div>
                 </div>
             </div>
 

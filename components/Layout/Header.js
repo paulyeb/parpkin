@@ -53,11 +53,18 @@ const Header = () => {
 
                 <div className="">
                     <ul className="list-reset flex justify-between flex-1 lg:flex-none items-center">
-                        <li className="mr-3">
+                        <li className="mr-0">
+                            <Link href="/sign_in">
+                                <a className="lg:inline-block hidden text-gray-800 no-underline font-medium text-xl py-2 px-2">
+                                    <FontAwesomeIcon icon = {faUserCircle} style={{width: '30px', color: 'gray' }}  />
+                                </a>
+                            </Link>
+                        </li>
+                        {/* is signed in, hide else display */}
+                        <li className="mr-2">
                             <Link href="/sign_in">
                                 <a className="lg:inline-block hidden text-gray-800 no-underline font-medium text-xl py-2 px-4">
-                                    <FontAwesomeIcon icon = {faUserCircle} style={{width: '40px', color: 'gray' }}  />
-                                    <span className="ml-3">Sign in</span>
+                                    <div className="">Sign in</div>
                                 </a>
                             </Link>
                         </li>

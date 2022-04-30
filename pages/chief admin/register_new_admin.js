@@ -1,4 +1,4 @@
-import RegisterNewAdmin from "../../components/Admin/RegisterNewAdmin"
+import RegisterNewAdmin from "../../components/Admin/UserAccount/RegisterNewAdmin"
 
 const RegisterNewAdminPage = () => {
     return(

@@ -14,30 +14,38 @@ const CreateAccount = () => {
                 <div className="text-2xl">
                     <form>
                         <div className="flex flex-col items-center">
+                        <div className="lg:flex lg:flex-row lg:justify-around lg:items-center flex flex-col items-center">
                             <input 
                                 type="text" 
-                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-3/5 placeholder-gray-500" 
-                                placeholder="Enter Your Full Name*" 
+                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 lg:w-2/5 w-4/5 placeholder-gray-500" 
+                                placeholder="Enter First Name" 
                                 required
                             />
                             <input 
-                                type="tel" 
-                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
-                                placeholder="Phone Number*" 
+                                type="text" 
+                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 lg:w-2/5 w-4/5 placeholder-gray-500" 
+                                placeholder="Enter Last Name" 
                                 required
                             />
+                        </div>
+                        <input 
+                            type="tel" 
+                            className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
+                            placeholder="Phone Number" 
+                            required
+                        />
                         </div>    
                         <div className="lg:flex lg:flex-row lg:justify-around lg:items-center flex flex-col items-center">
                             <input 
                                 type="password" 
                                 className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
-                                placeholder="Enter Password*" 
+                                placeholder="Enter Password" 
                                 required
                             />
                             <input 
                                 type="password" 
                                 className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
-                                placeholder="Re-enter Password*" 
+                                placeholder="Re-enter Password" 
                                 required
                             />
                         </div>

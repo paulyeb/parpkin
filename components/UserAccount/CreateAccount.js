@@ -1,4 +1,38 @@
+import { useRef } from "react";
+import useUser from "../../hooks/useUser";
+
 const CreateAccount = () => {
+    const { addNewUser } = useUser();
+
+    const firstNameInputRef = useRef();
+    const lastNameInputRef = useRef();
+    const phoneInputRef = useRef();
+    const passwordInputRef = useRef();
+    const reEnterPasswordInputRef = useRef();
+    
+    const addNewUserHandler = (e) => {
+        e.preventDefault();
+    
+        const userDetails = {
+            firstname: firstNameInputRef.current.value,
+            lastname: lastNameInputRef.current.value,
+            phone_number: phoneInputRef.current.value,
+            password: passwordInputRef.current.value,
+        }
+        
+        const reEnterPassword = reEnterPasswordInputRef.current.value;
+    
+        if (password !== reEnterPassword) return;
+        
+        addNewUser(userDetails);
+    
+        firstNameInputRef.current.value = ''
+        lastNameInputRef.current.value = ''
+        phoneInputRef.current.value = ''
+        passwordInputRef.current.value = ''
+        reEnterPasswordInputRef.current.value = ''
+    }
+
     return(
         <div className="container flex flex-col items-center text-center mt-10 lg:mt-20">
             <div className="lg:mb-10 mb-5">
@@ -12,28 +46,31 @@ const CreateAccount = () => {
                     CREATE A FREE ACCOUNT TODAY!
                 </div>
                 <div className="text-2xl">
-                    <form>
+                    <form onSubmit={addNewUserHandler}>
                         <div className="flex flex-col items-center">
-                        <div className="lg:flex lg:flex-row lg:justify-around lg:items-center flex flex-col items-center">
+                            <div className="lg:flex lg:flex-row lg:justify-around lg:items-center flex flex-col items-center">
+                                <input 
+                                    type="text" 
+                                    className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 lg:w-2/5 w-4/5 placeholder-gray-500" 
+                                    placeholder="Enter First Name" 
+                                    required
+                                    ref={firstNameInputRef}
+                                />
+                                <input 
+                                    type="text" 
+                                    className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 lg:w-2/5 w-4/5 placeholder-gray-500" 
+                                    placeholder="Enter Last Name" 
+                                    required
+                                    ref={lastNameInputRef}
+                                />
+                            </div>
                             <input 
-                                type="text" 
-                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 lg:w-2/5 w-4/5 placeholder-gray-500" 
-                                placeholder="Enter First Name" 
+                                type="tel" 
+                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
+                                placeholder="Phone Number" 
                                 required
+                                ref={phoneInputRef}
                             />
-                            <input 
-                                type="text" 
-                                className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 lg:w-2/5 w-4/5 placeholder-gray-500" 
-                                placeholder="Enter Last Name" 
-                                required
-                            />
-                        </div>
-                        <input 
-                            type="tel" 
-                            className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
-                            placeholder="Phone Number" 
-                            required
-                        />
                         </div>    
                         <div className="lg:flex lg:flex-row lg:justify-around lg:items-center flex flex-col items-center">
                             <input 
@@ -41,12 +78,14 @@ const CreateAccount = () => {
                                 className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
                                 placeholder="Enter Password" 
                                 required
+                                ref={passwordInputRef}
                             />
                             <input 
                                 type="password" 
                                 className="border-b border-gray-700 focus:outline-none text-gray-800 text-xl lg:text-2xl lg:font-medium text-center h-20 w-2/5 placeholder-gray-500" 
                                 placeholder="Re-enter Password" 
                                 required
+                                ref={reEnterPasswordInputRef}
                             />
                         </div>
                         <p 

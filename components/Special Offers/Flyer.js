@@ -8,7 +8,7 @@ const SpecialOffersFlyer = () => {
                 {`Deals & Special Offers`}
             </div>
             <div className="container hidden lg:grid lg:grid-cols-3 pb-40 gap-6 px-4">
-                <Link href="/menu">
+                <Link href="/specialOffers#freakyfriday">
                     <a className="max-w-sm ml-2 dark:bg-gray-800 dark:border-gray-700">
                         <Image 
                             src="/images/special offers/Freaky Friday-1.png" 
@@ -18,7 +18,7 @@ const SpecialOffersFlyer = () => {
                         />
                     </a>
                 </Link>
-                <Link href="/menu">
+                <Link href="/specialOffers#freakyfriday">
                     <a className="max-w-sm ml-2 dark:bg-gray-800 dark:border-gray-700">
                         <Image 
                             src="/images/special offers/Freaky Friday-1.png" 
@@ -28,7 +28,7 @@ const SpecialOffersFlyer = () => {
                         />
                     </a>
                 </Link>
-                <Link href="/menu">
+                <Link href="/specialOffers#freakyfriday">
                     <a className="max-w-sm ml-2 dark:bg-gray-800 dark:border-gray-700">
                         <Image 
                             src="/images/special offers/Freaky Friday-1.png" 
@@ -40,7 +40,7 @@ const SpecialOffersFlyer = () => {
                 </Link>
             </div>
             <div className="container lg:hidden grid grid-cols-2 gap-6 px-4">
-                <Link href="/menu">
+                <Link href="/specialOffers#freakyfriday">
                     <a className="max-w-sm ml-2 dark:bg-gray-800 dark:border-gray-700">
                         <Image 
                             src="/images/special offers/Freaky Friday-1.png" 
@@ -50,7 +50,7 @@ const SpecialOffersFlyer = () => {
                         />
                     </a>
                 </Link>
-                <Link href="/menu">
+                <Link href="/specialOffers#freakyfriday">
                     <a className="max-w-sm ml-2 dark:bg-gray-800 dark:border-gray-700">
                         <Image 
                             src="/images/special offers/Freaky Friday-1.png" 

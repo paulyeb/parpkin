@@ -72,9 +72,6 @@ const Footer = () => {
                         <a href={"https://twitter.com/parpkinshawarma?s=20&t=M_5b30S8mSGpa3yO7RbAyA"} target="_blank">
                             <FontAwesomeIcon icon={faTwitter} className="m-2 p-2 border border-gray-500 rounded-full" style={{ color: 'skyblue', width: '45px', height: '45px'}} />
                         </a>
-                        <a href={"https://twitter.com/parpkinshawarma?s=20&t=M_5b30S8mSGpa3yO7RbAyA"} target="_blank">
-                            <FontAwesomeIcon icon={faFacebookF} className="m-2 p-2 border border-gray-500 rounded-full" style={{ color: 'white', width: '45px', height: '45px'}} />
-                        </a>
                     </div>
                 </div>
             </div>

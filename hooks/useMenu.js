@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const usePost = () => {
+const useMenu = () => {
     const [allMenu, setAllMenu] = useState([]);
 
     useEffect(() => {
@@ -8,7 +8,7 @@ const usePost = () => {
     }, []);
 
     const fetchMenu = () => {
-        fetch('http://localhost:8000/api/v1/meals')
+        fetch('http://localhost:8000/api/v1/menu')
             .then(res => res.json())
             .then(data => {
                 console.log(data),
@@ -16,16 +16,17 @@ const usePost = () => {
             })
     }
 
-    const addMeal = (data) => {
-        fetch('http://localhost:8000/api/v1/meals', {
-        method: 'POST',
-        mode: 'cors',
-        body: JSON.stringify(data),
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        }
-    })
+    const addMenuItem = (newMenuItem) => {
+        fetch('http://localhost:8000/api/v1/menu', {
+            method: 'POST',
+            mode: 'cors',
+            body: JSON.stringify(newMenuItem),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                }
+            }
+        )
         .then(res => res.json())
         .then(data => {
             console.log(data),
@@ -33,8 +34,9 @@ const usePost = () => {
         })
         .catch((err) => console.log(err));
 
-        return {allMenu, addMeal};
     }
+    
+    return {allMenu, addMenuItem};
 }
 
-export default usePost;
+export default useMenu;

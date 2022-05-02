@@ -2,7 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faEye, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
-const Table = ({ allMenu }) => {
+import Image from "next/image";
+
+const Table = ({ menu }) => {
     return(
         <table className="2xl:w-2/3 w-full text-left mt-5 text-lg shadow-lg">
             <thead className="">
@@ -17,11 +19,11 @@ const Table = ({ allMenu }) => {
                 </tr>
             </thead>
             <tbody>
-                {allMenu.map( menuItem => 
-                    <tr>
-                        <td className="border border-gray-400 p-2 w-3">1</td>
+                {menu.map( menuItem => 
+                    <tr key={menuItem.id}>
+                        <td className="border border-gray-400 p-2 w-3">{menuItem.id}</td>
                         <td className="border border-gray-400 p-2">{menuItem.name}</td>
-                        <td className="border border-gray-400 p-2">{menuItem.category}</td>
+                        <td className="border border-gray-400 p-2">{menuItem.category.name}</td>
                         <td className="border border-gray-400 p-2">{menuItem.description}</td>
                         <td className="border border-gray-400 p-2">{menuItem.price}</td>
                         <td className="border border-gray-400 p-2">{menuItem.image}</td>

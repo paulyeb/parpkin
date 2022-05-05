@@ -5,8 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faBars  } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Cart from "../Cart/Cart";
 
 const Header = () => {
+    const [displayCart, setDisplayCart] = useState(false);
+
+    const displayCartHandler = () => {
+        setDisplayCart(true);
+    }
+
     return(           
         <nav className="bg-white lg:p-0 p-3 sticky mt-0 w-full z-10 top-0" id="navbar">
             <div className="lg:container lg:mx-auto flex flex-wrap lg:justify-between justify-between items-center">
@@ -71,12 +79,15 @@ const Header = () => {
                         
                         <li className="mr-3"> 
                             <button 
-                                onClick={() => console.log('cart check')} 
+                                onClick={displayCartHandler} 
                                 className="lg:inline-block text-gray-800 no-underline font-medium text-lg"
                             >
                                 <FontAwesomeIcon icon = {faCartShopping} style={{height: '25px', color: 'grey' }}  />
                             </button>
                         </li>
+                        {
+                            displayCart ? <Cart dismissCart={() => setDisplayCart(false)} /> : null
+                        }
                     </ul>
                 </div>
             </div>

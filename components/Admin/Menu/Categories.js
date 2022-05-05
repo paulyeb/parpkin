@@ -3,18 +3,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useCategories from "../../../hooks/useCategories";
 
 const Categories = ({exitCategoriesModal}) => {
-    const {categories} = useCategories();
+    const {categories, isLoading} = useCategories();
 
     const exitCategoriesModalHandler = () => {
         exitCategoriesModal();
     }
     
     return(
-        <div className="container flex justify-center relative top-20 bg-white border py-5 lg:w-2/5 rounded-lg">
+        <div className="container flex justify-center relative top-20 shadow-2xl bg-white border py-5 lg:w-2/5 rounded-lg">
             
-            { !categories ? 
-                <p className="font-medium text-2xl">No Categories Found</p> : 
-                    categories.length === 0 ? <p className="font-medium text-2xl">Loading...</p> :
+            { 
+                isLoading ? 
+                    <p className="font-medium text-2xl">
+                        Loading...
+                    </p> : 
+                categories.length === 0 ? 
+                    <p className="font-medium text-2xl">
+                        No Categories Found
+                    </p> :
                 <div className="flex-col justify-center items-center">
                     <p className="px-3 py-1 my-2 font-medium text-xl underline">
                         CATEGORIES

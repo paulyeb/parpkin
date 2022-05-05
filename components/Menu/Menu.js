@@ -63,28 +63,28 @@ const Menu = () => {
                             <MenuItem 
                                 image={`/images/burgers/burger2.jpg`}
                                 title={`Single Burger`}
-                                price={`$5.00`}
+                                price={`GHS 5.00`}
                                 description={`Very filling | Very filling | Very filling | Very filling`}
                                 className="overflow-hidden"
                             />
                             <MenuItem 
                                 image={`/images/burgers/burger2.jpg`}
                                 title={`Single Burger`}
-                                price={`$5.00`}
+                                price={`GHS 5.00`}
                                 description={`Very filling | Very filling | Very filling | Very filling`}
                                 className="overflow-hidden"
                             />
                             <MenuItem 
                                 image={`/images/burgers/burger2.jpg`}
                                 title={`Single Burger`}
-                                price={`$5.00`}
+                                price={`GHS 5.00`}
                                 description={`Very filling | Very filling | Very filling | Very filling`}
                                 className="overflow-hidden"
                             />
                             <MenuItem 
                                 image={`/images/burgers/burger2.jpg`}
                                 title={`Single Burger`}
-                                price={`$5.00`}
+                                price={`GHS 5.00`}
                                 description={`Very filling | Very filling | Very filling | Very filling`}
                                 className="overflow-hidden"
                             />
@@ -98,28 +98,28 @@ const Menu = () => {
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
@@ -132,28 +132,28 @@ const Menu = () => {
                         <MenuItem 
                             image={`/images/shawarma/2022_04_23_00_14_IMG_1211.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/shawarma/shawarma2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/shawarma/2022_04_23_00_14_IMG_1211.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/shawarma/shawarma2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
@@ -166,28 +166,28 @@ const Menu = () => {
                         <MenuItem 
                             image={`/images/chips/2022_04_23_00_14_IMG_1212.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chips/2022_04_23_00_15_IMG_1217.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chips/2022_04_23_00_15_IMG_1217.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chips/2022_04_23_00_14_IMG_1212.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
@@ -200,28 +200,28 @@ const Menu = () => {
                         <MenuItem 
                             image={`/images/combo/2022_04_23_00_17_IMG_1237.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/combo/combo1.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/combo/2022_04_23_00_17_IMG_1233.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/combo/combo2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
@@ -234,28 +234,28 @@ const Menu = () => {
                         <MenuItem 
                             image={`/images/pizza/pizza1.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/pizza/pizza1.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/pizza/pizza1.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/pizza/pizza1.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
@@ -267,28 +267,28 @@ const Menu = () => {
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />
                         <MenuItem 
                             image={`/images/chicken bucket/bucket2.jpg`}
                             title={`Single Burger`}
-                            price={`$5.00`}
+                            price={`GHS 5.00`}
                             description={`Very filling | Very filling | Very filling | Very filling`}
                             className="overflow-hidden"
                         />

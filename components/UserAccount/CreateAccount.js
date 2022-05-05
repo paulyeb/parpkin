@@ -19,12 +19,12 @@ const CreateAccount = () => {
             phone_number: phoneInputRef.current.value,
             password: passwordInputRef.current.value,
         }
-        
-        const reEnterPassword = reEnterPasswordInputRef.current.value;
-    
-        if (password !== reEnterPassword) return;
+            
+        if (passwordInputRef.current.value !== reEnterPasswordInputRef.current.value) return;
         
         addNewUser(userDetails);
+
+        console.log('New User:', userDetails)
     
         firstNameInputRef.current.value = ''
         lastNameInputRef.current.value = ''

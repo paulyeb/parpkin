@@ -3,7 +3,13 @@ import Sidebar from "../Layout/Sidebar";
 import Main from "../Layout/Main";
 import Header from "../Layout/Header";
 
+import useUser from "../../../hooks/useUser";
+import useOrder from "../../../hooks/useOrder";
+
 const Dashboard = () => {
+    const { users, isLoading } = useUser();
+    const { orders } = useOrder();
+
     return(
         <Body>
             <Sidebar />
@@ -19,14 +25,18 @@ const Dashboard = () => {
                     </div>
                     <div className="py-5 px-8 text-gray-700">
                         <h1 className="mb-3 text-3xl font-bold">TOTAL CUSTOMERS</h1>
-                        <span className="font-medium text-3xl">130</span>
+                        <span className="font-medium text-3xl">
+                            { isLoading ? 'Loading...' : users.length}
+                        </span>
                         <div className="mt-6">
                             <a href="#" className="border-2 border-gray-800 my-2 py-1 px-3 rounded-lg">View</a>
                         </div>
                     </div>
                     <div className="py-5 px-8 text-gray-700">
                         <h1 className="mb-3 text-3xl font-bold">TOTAL ORDERS</h1>
-                        <span className="font-medium text-3xl">564</span>
+                        <span className="font-medium text-3xl">
+                            { isLoading ? 'Loading...' : orders.length }
+                        </span>
                         <div className="mt-6">
                             <a href="#" className="border-2 border-gray-800 my-2 py-1 px-3 rounded-lg">View</a>
                         </div>

@@ -1,33 +1,33 @@
 import { useEffect, useState } from "react";
 
-const useUser = () => {
-    const [users, setUsers] = useState([]);
+const useOrder = () => {
+    const [orders, setOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        fetchUsers();
+        fetchOrders();
     }, []);
 
-    const fetchUsers = async () => {
+    const fetchOrders = async () => {
         setIsLoading(true);
-
-        await fetch("http://localhost:8000/api/v1/users")
+        
+        await fetch("http://localhost:8000/api/v1/orders")
             .then(res => res.json())
             .then(data => {
                 console.log(data),
-                setUsers(data)
+                setOrders(data)
             }) 
             
-            setIsLoading(false);
+        setIsLoading(false);
     }
 
-    const addNewUser = async (userDetails) => {
+    const addNewOrder = async (orderDetails) => {
         setIsLoading(true);
-
-        await fetch("http://localhost:8000/api/v1/users", {
+        
+        await fetch("http://localhost:8000/api/v1/orders", {
             method: "POST",
             mode: "cors",
-            body: JSON.stringify(userDetails),
+            body: JSON.stringify(orderDetails),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -36,14 +36,14 @@ const useUser = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data),
-                setUsers(data)
+                setOrders(data)
             }) 
             
-            setIsLoading(false);
+        setIsLoading(false);
     }
 
-    return { users, addNewUser, isLoading }
+    return { orders, addNewOrder, isLoading }
     
 }
 
-export default useUser;
+export default useOrder;

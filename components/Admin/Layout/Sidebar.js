@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Sidebar = () => {
     return(
@@ -11,49 +12,54 @@ const Sidebar = () => {
             />
             <ul className="text-left">
                 <li className="mb-3 mt-6 font-medium text-lg">
-                    <a href="/admin/dashboard">
+                    <Link href="/admin/dashboard">
                         Dashboard
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/customers">
+                    <Link href="/admin/customers">
                         Customers
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/orders">
+                    <Link href="/admin/orders">
                         Orders
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/menu">
+                    <Link href="/admin/menu">
                         Menu
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/homepage">
+                    <Link href="/admin/categories">
+                        Categories
+                    </Link>
+                </li>
+                <li className="mb-3 font-medium text-lg">
+                    <Link href="/admin/homepage">
                         Home Page
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/pages">
+                    <Link href="/admin/pages">
                         Pages
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/income">
+                    <Link href="/admin/income">
                         Income
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/gallery">
+                    <Link href="/admin/gallery">
                         Gallery
-                    </a>
+                    </Link>
                 </li>
                 <li className="mb-3 font-medium text-lg">
-                    <a href="/admin/staff">
+                    <Link href="/admin/staff">
                         Staff
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>

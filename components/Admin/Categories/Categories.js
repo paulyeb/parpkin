@@ -11,6 +11,8 @@ import NewCategory from "./NewCategory";
 import Table from "./Table";
 
 const Categories = () => {
+    
+    
     const { categories, addCategory, isLoading } = useCategories();
     const [category, setCategory] = useState([]);
 

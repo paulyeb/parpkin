@@ -17,9 +17,9 @@ const Table = ({ menu }) => {
                 </tr>
             </thead>
             <tbody>
-                {menu.map( menuItem => 
+                {menu.map( (menuItem, index) => 
                     <tr key={menuItem.id}>
-                        <td className="border border-gray-400 p-2 w-3">{menuItem.id}</td>
+                        <td className="border border-gray-400 p-2 w-3">{index + 1}</td>
                         <td className="border border-gray-400 p-2">{menuItem.name}</td>
                         <td className="border border-gray-400 p-2">{menuItem.category.name}</td>
                         <td className="border border-gray-400 p-2">{menuItem.description}</td>

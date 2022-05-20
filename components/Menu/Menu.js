@@ -4,41 +4,41 @@ const Menu = () => {
     return(
         <div className="container lg:flex lg:justify-start lg:items-start pb-60">
             <div className="hidden lg:inline fixed top-30 p-2">
-                <div className="mt-5 mb-3 ml-9 font-bold text-2xl">
+                <div className="mt-2 mb-1 ml-9 font-bold text-xl">
                     MENU
                 </div>
-                <div className="mb-4">
-                    <a href="#burger" className="hover:font-bold text-xl">
+                <div className="mb-1">
+                    <a href="#burger" className="hover:font-bold text-lg">
                         Burgers
                     </a>
                 </div>
-                <div className="mb-4">
-                    <a href="#chicken" className="hover:font-bold text-xl">
+                <div className="mb-1">
+                    <a href="#chicken" className="hover:font-bold text-lg">
                         Chicken Buckets
                     </a>
                 </div>
-                <div className="mb-4">
-                    <a href="#shawarma" className="hover:font-bold text-xl">
+                <div className="mb-1">
+                    <a href="#shawarma" className="hover:font-bold text-lg">
                         Shawarma
                     </a>
                 </div>
-                <div className="mb-4">
-                    <a href="#chips" className="hover:font-bold text-xl">
+                <div className="mb-1">
+                    <a href="#chips" className="hover:font-bold text-lg">
                         {`Chips & Chicken`}
                     </a>
                 </div>
-                <div className="mb-4">
-                    <a href="#combo" className="hover:font-bold text-xl">
+                <div className="mb-1">
+                    <a href="#combo" className="hover:font-bold text-lg">
                         Combo Packages
                     </a>
                 </div>
-                <div className="mb-4">
-                    <a href="#pizza" className="hover:font-bold text-xl">
+                <div className="mb-1">
+                    <a href="#pizza" className="hover:font-bold text-lg">
                         Pizza
                     </a>
                 </div>
-                <div className="mb-4">
-                    <a href="#beverages" className="hover:font-bold text-xl">
+                <div className="mb-1">
+                    <a href="#beverages" className="hover:font-bold text-lg">
                         Beverages
                     </a>
                 </div>
@@ -49,7 +49,7 @@ const Menu = () => {
                     name="" 
                     id=""
                     placeholder="Search"
-                    className="fixed z-10 lg:top-20 top-3 border-2 lg:my-9 my-16 w-60 rounded-lg focus:outline-none p-2" 
+                    className="fixed z-10 lg:top-9 top-3 border-2 lg:my-9 my-16 w-50 rounded-lg focus:outline-none p-2" 
                 />
                 <div className="bg-gray-700 lg:inline hidden my-5 w-full h-1">
                 

@@ -19,9 +19,9 @@ const Table = ({ orders }) => {
                 </tr>
             </thead>
             <tbody>
-                {orders.map( order => 
+                {orders.map( (order, index) => 
                     <tr key={order.id}>
-                        <td className="border border-gray-400 p-2 w-3">{order.id}</td>
+                        <td className="border border-gray-400 p-2 w-3">{index + 1}</td>
                         <td className="border border-gray-400 p-2 w-3">{order.id}</td>
                         <td className="border border-gray-400 p-2 w-3">{`${order.user.firstname} ${order.user.lastname}`}</td>
                         <td className="border border-gray-400 p-2">{order.date}</td>

@@ -5,7 +5,7 @@ import { faEye, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 const Table = ({ users }) => {
     return(
-        <table className="2xl:w-2/3 w-full text-left mt-5 text-lg shadow-lg">
+        <table className="2xl:w-2/3 w-full text-left text-center ml-4 mt-5 text-lg shadow-lg">
             <thead className="">
                 <tr className="text-center">
                     <th className="border border-gray-400 p-2 w-3">S/N</th>
@@ -16,10 +16,10 @@ const Table = ({ users }) => {
                 </tr>
             </thead>
             <tbody>
-                {users.map( user => 
+                {users.map( (user, index) => 
                     <tr key={user.id}>
-                        <td className="border border-gray-400 p-2 w-3">{user.id}</td>
-                        <td className="border border-gray-400 p-2 w-3">{user.firstname}</td>
+                        <td className="border border-gray-400 p-2 w-3">{index + 1}</td>
+                        <td className="border border-gray-400 p-2">{user.firstname}</td>
                         <td className="border border-gray-400 p-2">{user.lastname}</td>
                         <td className="border border-gray-400 p-2">{user.phone_number}</td>
                         <td className="border border-gray-400 p-2 text-center">

@@ -11,7 +11,13 @@ const useOrder = () => {
     const fetchOrders = async () => {
         setIsLoading(true);
         
-        await fetch("http://localhost:8000/api/v1/orders")
+        await fetch("http://localhost:8000/api/v1/orders", {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 console.log(data),
@@ -30,7 +36,8 @@ const useOrder = () => {
             body: JSON.stringify(orderDetails),
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
             }
         })
             .then(res => res.json())

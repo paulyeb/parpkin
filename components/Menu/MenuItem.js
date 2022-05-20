@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { CartContext } from "../../store/cart-context";
+
+
 import Image from "next/image";
-import Link from "next/link";
+
 
 const MenuItem = ({ image, title, price, description }) => {
+    const {dispatch} = useContext(CartContext);
     return(
         <div className="max-w-sm rounded-lg mb-6 dark:bg-gray-800 dark:border-gray-700">
             <Image 
@@ -19,6 +24,9 @@ const MenuItem = ({ image, title, price, description }) => {
             </div>
                 <button 
                     className="outline-none text-xl m-2 py-3 lg:py-3 lg:px-10 w-2/4 lg:w-auto bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-600 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800 font-medium rounded-3xl"
+                    onClick={() => dispatch({
+                        type: 'increase'
+                    })}
                     >
                     Add to Cart
                 </button>

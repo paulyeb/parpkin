@@ -8,16 +8,22 @@ const useCategories = () => {
         fetchCategories();
     }, []);
 
-    const fetchCategories = async () => {
+    const fetchCategories =  () => {
         setIsLoading(true);
 
-        await fetch('http://localhost:8000/api/v1/categories')
+        fetch('http://localhost:8000/api/v1/categories', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setCategories(data)
+                setIsLoading(false);    
             })
 
-        setIsLoading(false);    
     }
 
     const addCategory = async (newCategory) => {
@@ -30,7 +36,8 @@ const useCategories = () => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                }
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+            }
             }
         )
         .then(res => res.json())
@@ -51,7 +58,8 @@ const useCategories = () => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                }
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+            }
             }
         )
         .then(res => res.json())

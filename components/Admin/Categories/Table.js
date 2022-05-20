@@ -14,9 +14,9 @@ const Table = ({ categories }) => {
                 </tr>
             </thead>
             <tbody>
-                {categories.map( category => 
+                {categories.map( (category, index) => 
                     <tr key={category.id}>
-                        <td className="border border-gray-400 p-2 w-3">{category.id}</td>
+                        <td className="border border-gray-400 p-2 w-3">{index + 1}</td>
                         <td className="border border-gray-400 p-2">{category.name}</td>
                         <td className="border border-gray-400 p-2">{category.name}</td>
                         <td className="border border-gray-400 p-2 text-center">

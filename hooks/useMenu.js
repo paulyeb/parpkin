@@ -11,7 +11,13 @@ const useMenu = () => {
     const fetchMenu = async () => {
         setIsLoading(true);
 
-        await fetch('http://localhost:8000/api/v1/menu')
+        await fetch('http://localhost:8000/api/v1/menu', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 console.log(data),
@@ -27,11 +33,12 @@ const useMenu = () => {
         await fetch('http://localhost:8000/api/v1/menu', {
             method: 'POST',
             mode: 'cors',
-            body: JSON.stringify(newMenuItem),
+            body: getPreparedData(newMenuItem),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                }
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+            }
             }
         )
         .then(res => res.json())
@@ -44,6 +51,18 @@ const useMenu = () => {
         setIsLoading(false);
 
     }
+
+    const getPreparedData = (data) => {
+        let formData = new FormData();
+
+        formData.append('category_id', data['category_id']);
+        formData.append('name', data['name']);
+        formData.append('description', data['description']);
+        formData.append('price', data['price']);
+        formData.append('image', data['image']);
+
+        return formData;
+    };
     
     return {allMenu, addMenuItem, isLoading};
 }

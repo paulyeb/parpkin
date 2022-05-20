@@ -29,13 +29,15 @@ const NewMenuItem = ({ onAddMenuItem }) => {
             image: imageInputRef.current.value,
         }
 
+        console.log('image', imageInputRef.current)
+
         onAddMenuItem(menuItemDetails);
 
-            nameInputRef.current.value = ''
-            categoryInputRef.current.value = ''
-            descriptionInputRef.current.value = ''
-            priceInputRef.current.value = ''
-            imageInputRef.current.value = ''
+        nameInputRef.current.value = '';
+        categoryInputRef.current.value = '';
+        descriptionInputRef.current.value = '';
+        priceInputRef.current.value = '';
+        imageInputRef.current.value = '';
     }
 
     return(

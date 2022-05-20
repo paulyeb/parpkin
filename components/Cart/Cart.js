@@ -1,12 +1,41 @@
+import { useContext } from "react";
+import { CartContext } from "../../store/cart-context";
+
 import Backdrop from "../Layout/Backdrop";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faArrowRightFromBracket, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = ({ dismissCart}) => {
+    const {state, dispatch} = useContext(CartContext);
+
+    const menu = state.cart;
+
     const dismissCartHandler = () => {
         dismissCart();
     }
+
+    // const menu = [
+    //     {
+    //         id: 1,
+    //         description: 'Cheese burger',
+    //         price: 'GHS15.00',
+    //         image: '/images/burgers/burger1.jpg'
+    //     },
+    //     {
+    //         id: 2,
+    //         description: 'Family Size Pizza',
+    //         price: 'GHS65.00',
+    //         image: '/images/pizza/pizza1.jpg'
+    //     },
+    //     {
+    //         id: 3,
+    //         description: 'Shawarma',
+    //         price: 'GHS25.00',
+    //         image: '/images/shawarma/shawarma2.jpg'
+    //     },
+    // ]
+
     return(
         <Backdrop>
             <div className="container fixed relative bg-white shadow-2xl rounded-lg lg:w-2/5 h-auto">   
@@ -18,11 +47,12 @@ const Cart = ({ dismissCart}) => {
                     <button onClick={dismissCartHandler}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} style={{width: '20px', height: '40px'}} />
                     </button>    
-                </div>            
-                <div className="flex p-2 border-b">
+                </div>              
+                {menu.map( menuItem => 
+                <div className="flex p-2 border-b mb-3" key={menuItem.id}>
                     <div className="">
                         <Image 
-                        src={'/images/combo/combo1.jpg'}
+                        src={menuItem.image}
                         width={70}
                         height={70}
                         className="border-2 m-2"
@@ -30,76 +60,29 @@ const Cart = ({ dismissCart}) => {
                     </div>
                     
                     <div className="ml-6 flex flex-col justify-between items-between w-full">
-                        <div>
-                            <p>Description</p>
+                        <div className="flex justify-between">
+                            <p>{menuItem.description}</p>
+                            <button onClick={() => dispatch({
+                                type: 'delete',
+                                payload: menuItem
+                            })}>
+                                <FontAwesomeIcon icon={faTrashCan} style={{height:'17px'}} />
+                            </button>
                         </div>
 
-                        <div className="mt-4 flex justify-between items-end">
-                            <p>Price</p>
+                        <div className="mt-4 flex justify-between items-end text-gray-900 font-medium">
+                            <p>{menuItem.price}</p>
                              <div>
-                                <span className="mr-1">0</span> 
+                                <span className="mr-1">{state.quantity}</span> 
                                 <span className="ml-1">
-                                    <button className="px-4 py-1 border text-xl">—</button>
-                                    <button className="px-4 py-1 border text-xl">+</button>
+                                    <button className="px-4 py-1 border text-xl" onClick={() => {dispatch({type: 'decrease', payload: menuItem.id})}}>—</button>
+                                    <button className="px-4 py-1 border text-xl" onClick={() => {dispatch({type: 'increase', payload: menuItem.id})}}>+</button>
                                 </span>
                             </div>   
                         </div>
                     </div>
-                </div>  
-                <div className="flex p-2 border-b">
-                    <div className="">
-                        <Image 
-                        src={'/images/combo/combo1.jpg'}
-                        width={70}
-                        height={70}
-                        className="border-2 m-2"
-                        />
-                    </div>
+                </div>)}    
                     
-                    <div className="ml-6 flex flex-col justify-between items-between w-full">
-                        <div>
-                            <p>Description</p>
-                        </div>
-
-                        <div className="mt-4 flex justify-between items-end">
-                            <p>Price</p>
-                             <div>
-                                <span className="mr-1">0</span> 
-                                <span className="ml-1">
-                                    <button className="px-4 py-1 border text-xl">—</button>
-                                    <button className="px-4 py-1 border text-xl">+</button>
-                                </span>
-                            </div>   
-                        </div>
-                    </div>
-                </div>  
-                <div className="flex p-2 border-b">
-                    <div className="">
-                        <Image 
-                        src={'/images/combo/combo1.jpg'}
-                        width={70}
-                        height={70}
-                        className="border-2 m-2"
-                        />
-                    </div>
-                    
-                    <div className="ml-6 flex flex-col justify-between items-between w-full">
-                        <div>
-                            <p>Description</p>
-                        </div>
-
-                        <div className="mt-4 flex justify-between items-end">
-                            <p>Price</p>
-                             <div>
-                                <span className="mr-1">0</span> 
-                                <span className="ml-1">
-                                    <button className="px-4 py-1 border text-xl">—</button>
-                                    <button className="px-4 py-1 border text-xl">+</button>
-                                </span>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
                 <div className="flex justify-between items-center mt-5">
                     <div className="flex flex-col mb-3">
                         <span className="">Total (including delivery)</span>

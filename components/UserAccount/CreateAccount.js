@@ -1,17 +1,26 @@
-import { useRef } from "react";
+import { useRouter } from "next/router";
+import { useRef, useState } from "react";
 import useUser from "../../hooks/useUser";
 
+import Link from "next/link";
+
 const CreateAccount = () => {
-    const { addNewUser } = useUser();
+    const { addNewUser, isLoading } = useUser();
+    const [hasError, setHasError] = useState(false);
+    const router = useRouter();
 
     const firstNameInputRef = useRef();
     const lastNameInputRef = useRef();
     const phoneInputRef = useRef();
     const passwordInputRef = useRef();
     const reEnterPasswordInputRef = useRef();
+
+    let errorMessage = "Passwords must match each other";
     
-    const addNewUserHandler = (e) => {
+    const addNewUserHandler = async (e) => {
         e.preventDefault();
+        setHasError(false);
+
     
         const userDetails = {
             firstname: firstNameInputRef.current.value,
@@ -19,10 +28,17 @@ const CreateAccount = () => {
             phone_number: phoneInputRef.current.value,
             password: passwordInputRef.current.value,
         }
+
+        console.log(userDetails);
+
+        // let errorMessage;
             
-        if (passwordInputRef.current.value !== reEnterPasswordInputRef.current.value) return;
+        if (passwordInputRef.current.value !== reEnterPasswordInputRef.current.value) {
+            setHasError(true);
+            return;
+        }
         
-        addNewUser(userDetails);
+        await addNewUser(userDetails);
 
         console.log('New User:', userDetails)
     
@@ -31,6 +47,8 @@ const CreateAccount = () => {
         phoneInputRef.current.value = ''
         passwordInputRef.current.value = ''
         reEnterPasswordInputRef.current.value = ''
+        
+        await router.push('/');
     }
 
     return(
@@ -88,6 +106,13 @@ const CreateAccount = () => {
                                 ref={reEnterPasswordInputRef}
                             />
                         </div>
+                        {
+                            hasError ?
+                                <p className="text-sm text-red-600 mt-3">
+                                    <u><b><i>{errorMessage}</i></b></u>
+                                </p> : 
+                            null
+                        }
                         <p 
                             className="text-sm text-gray-800 mt-10"
                         >
@@ -97,19 +122,20 @@ const CreateAccount = () => {
                             className="outline-none text-white text-xl mt-6 mb-3 py-3 lg:py-3 lg:px-10 w-2/4 lg:w-auto bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 font-medium rounded-3xl"
                             type="submit"
                         >
-                            Sign Up
+                            {isLoading ? 'Loading...' : 'Sign Up'}
                         </button>
                         <p 
                             className="text-sm text-gray-800 mt-1 mb-5"
                         >
                             or
                         </p>
-                        <a 
-                            href="/" 
-                            className="outline-none border border-gray-800 lg:text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl"
-                        >
-                            Skip, Continue As Guest
-                        </a>  
+                        <Link href="/"> 
+                            <a
+                                className="outline-none border border-gray-800 lg:text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl"
+                            >
+                                Skip, Continue As Guest
+                            </a>
+                        </Link>  
                     </form>
                 </div>
             </div>

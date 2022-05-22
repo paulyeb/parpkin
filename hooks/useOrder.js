@@ -8,10 +8,10 @@ const useOrder = () => {
         fetchOrders();
     }, []);
 
-    const fetchOrders = async () => {
+    const fetchOrders = () => {
         setIsLoading(true);
         
-        await fetch("http://localhost:8000/api/v1/orders", {
+        fetch("http://localhost:8000/api/v1/orders", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -22,15 +22,15 @@ const useOrder = () => {
             .then(data => {
                 console.log(data),
                 setOrders(data)
+                setIsLoading(false);
             }) 
             
-        setIsLoading(false);
     }
 
-    const addNewOrder = async (orderDetails) => {
+    const addNewOrder = (orderDetails) => {
         setIsLoading(true);
         
-        await fetch("http://localhost:8000/api/v1/orders", {
+        fetch("http://localhost:8000/api/v1/orders", {
             method: "POST",
             mode: "cors",
             body: JSON.stringify(orderDetails),
@@ -44,9 +44,9 @@ const useOrder = () => {
             .then(data => {
                 console.log(data),
                 setOrders(data)
+                setIsLoading(false);
             }) 
             
-        setIsLoading(false);
     }
 
     return { orders, addNewOrder, isLoading }

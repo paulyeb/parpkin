@@ -11,10 +11,10 @@ const useUser = () => {
         fetchUsers();
     }, []);
 
-    const fetchUsers = async () => {
+    const fetchUsers = () => {
         setIsLoading(true);
 
-        await fetch("http://localhost:8000/api/v1/users", {
+        fetch("http://localhost:8000/api/v1/users", {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -26,15 +26,15 @@ const useUser = () => {
             .then(data => {
                 // console.log(data),
                 setUsers(data)
+                setIsLoading(false);
             }) 
             
-            setIsLoading(false);
     }
 
-    const addNewUser = async (userDetails) => {
+    const addNewUser = (userDetails) => {
         setIsLoading(true);
 
-        const res = await fetch("http://localhost:8000/api/v1/users", {
+        fetch("http://localhost:8000/api/v1/users", {
             method: "POST",
             mode: "cors",
             body: JSON.stringify(userDetails),
@@ -44,15 +44,12 @@ const useUser = () => {
                 'Authorization': `Bearer ${localStorage.getItem('api_token')}`
             }
         })
-        
-        const data = await res.json()
-            
-        console.log(data);
-
-        setUsers(data);
-            
-        setIsLoading(false);
-
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setUsers(data);
+                setIsLoading(false);
+            });
         }
 
         const login = (credentials) => {
@@ -64,12 +61,12 @@ const useUser = () => {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('api_token')}`
                 }
             })
                 .then ((response) => response.json())
                 .then(data => {
-                    localStorage.setItem('api_token', JSON.stringify(data.api_token)),
+                    localStorage.setItem('api_token', (data.api_token)),
+                    localStorage.setItem('username', (data.data.firstname)),
                     console.log(data);
                     setIsLoading(false);
                 }) 

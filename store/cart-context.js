@@ -10,21 +10,21 @@ const CartProvider = ({children}) => {
             {
                 id: 1,
                 description: 'Cheese burger',
-                price: 'GHS15.00',
+                price: 'GHS 15.00',
                 image: '/images/burgers/burger1.jpg',
                 quantity: 0
             },
             {
                 id: 2,
                 description: 'Family Size Pizza',
-                price: 'GHS65.00',
+                price: 'GHS 65.00',
                 image: '/images/pizza/pizza1.jpg',
                 quantity: 0
             },
             {
                 id: 3,
                 description: 'Shawarma',
-                price: 'GHS25.00',
+                price: 'GHS 25.00',
                 image: '/images/shawarma/shawarma2.jpg',
                 quantity: 0
             },

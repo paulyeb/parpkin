@@ -1,43 +1,57 @@
-import { useEffect } from "react";
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 import useCategories from "../../../hooks/useCategories";
 
 const NewMenuItem = ({ onAddMenuItem }) => {
-
-    // const [categories, setCategories] = useState([]);
+    const [name, setName] =useState('');
+    const [category, setCategory] =useState('');
+    const [description, setDescription] =useState('');
+    const [image, setImage] =useState(null);
+    const [price, setPrice] =useState('');
 
     const { categories } = useCategories();
 
     useEffect(() => {
         categories
-    }, [categories])
+    }, [categories]);
+
+    const nameHandler = (e) => {
+        setName(e.target.value);
+    }
+
+    const categoryHandler = (e) => {
+        setCategory(e.target.value);
+    }
+
+    const descriptionHandler = (e) => {
+        setDescription(e.target.value);
+    }
+
+    const imageHandler = (e) => {
+        console.log(e.target.files);
+        setImage(e.target.files[0]);
+    }
     
-    const nameInputRef = useRef();
-    const categoryInputRef = useRef();
-    const descriptionInputRef = useRef();
-    const imageInputRef = useRef();
-    const priceInputRef = useRef();
+    const priceHandler = (e) => {
+        setPrice(e.target.value);
+    }
+    
 
     const addNewMenuItemHandler = (e) => {
         e.preventDefault();
 
         const menuItemDetails = {
-            name: nameInputRef.current.value,
-            category_id: categoryInputRef.current.value,
-            description: descriptionInputRef.current.value,
-            price: priceInputRef.current.value,
-            image: imageInputRef.current.value,
+            name,
+            category_id: category,
+            description,
+            price,
+            image,
         }
 
-        console.log('image', imageInputRef.current)
+        console.log('image', image);
+        console.log(menuItemDetails);
 
         onAddMenuItem(menuItemDetails);
 
-        nameInputRef.current.value = '';
-        categoryInputRef.current.value = '';
-        descriptionInputRef.current.value = '';
-        priceInputRef.current.value = '';
-        imageInputRef.current.value = '';
     }
 
     return(
@@ -50,8 +64,10 @@ const NewMenuItem = ({ onAddMenuItem }) => {
                 <input 
                     type="text" 
                     className="mb-5 font-medium border border-gray-400 rounded outline-none focus:outline-none block p-2"
-                    ref={nameInputRef}  
+                    value={name}  
+                    onChange={nameHandler}
                 />
+
             </div>
             <div>
                 <label className="font-bold text-gray-800 text-lg">
@@ -61,7 +77,8 @@ const NewMenuItem = ({ onAddMenuItem }) => {
                     name="" 
                     id="" 
                     required
-                    ref={categoryInputRef}
+                    value={category}
+                    onChange={categoryHandler}
                     className="mb-5 font-medium border border-gray-400 outline-none focus:outline-none block p-2 rounded"
                 >
                     <option value="" className="bg-gray-300">Select Category</option>
@@ -82,7 +99,8 @@ const NewMenuItem = ({ onAddMenuItem }) => {
                     id="" 
                     cols="35" 
                     rows="2" 
-                    ref={descriptionInputRef}
+                    value={description}
+                    onChange={descriptionHandler}
                     className="mb-5 font-medium border border-gray-400 rounded outline-none focus:outline-none block p-2"
                 />
             </div>
@@ -92,7 +110,8 @@ const NewMenuItem = ({ onAddMenuItem }) => {
                 </label>
                 <input 
                     type="file" 
-                    ref={imageInputRef}
+                    name="image"
+                    onChange={imageHandler}
                     className="mb-5 font-medium border border-gray-400 rounded outline-none focus:outline-none block p-2"  
                 />
             </div>
@@ -102,7 +121,8 @@ const NewMenuItem = ({ onAddMenuItem }) => {
                 </label>
                 <input 
                     type="text" 
-                    ref={priceInputRef}
+                    value={price}
+                    onChange={priceHandler}
                     className="mb-5 font-medium border border-gray-400 rounded outline-none focus:outline-none block p-2"  
                 />
             </div>

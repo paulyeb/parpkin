@@ -1,21 +1,28 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 const NewCategory = ({ onAddCategory}) => {
+    const [name, setName] = useState('');
+    const [image, setImage] = useState(null);
 
-    const nameInputRef = useRef();
-    const imageInputRef = useRef();
+    const nameHandler = (e) => {
+        setName(e.target.value)
+    }
+    const imageHandler = (e) => {
+        setImage(e.target.files[0])
+    }
 
     const addNewCategoryHandler = (e) => {
         e.preventDefault();
 
-        const categoryName = {
-            name: nameInputRef.current.value,
-            image: imageInputRef.current.value
+        const categoryInfo = {
+            name,
+            image
         }
 
-        onAddCategory(categoryName);
-            nameInputRef.current.value = '',
-            imageInputRef.current.value = ''
+        console.log(categoryInfo);
+
+        onAddCategory(categoryInfo);
+        
         }
 
     return(
@@ -28,7 +35,8 @@ const NewCategory = ({ onAddCategory}) => {
                 <input 
                     type="text" 
                     className="mb-5 w-full font-medium border border-gray-400 rounded outline-none focus:outline-none block p-2"
-                    ref={nameInputRef}  
+                    onChange={nameHandler}  
+                    value={name}
                 />
             </div>
             <div>
@@ -38,7 +46,7 @@ const NewCategory = ({ onAddCategory}) => {
                 <input 
                     type="file" 
                     className="mb-5 w-full font-medium border border-gray-400 rounded outline-none focus:outline-none block p-2"
-                    ref={imageInputRef}  
+                    onChange={imageHandler}
                 />
             </div>
             <div className="self-end">

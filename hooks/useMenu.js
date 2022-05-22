@@ -29,16 +29,17 @@ const useMenu = () => {
 
     const addMenuItem = async (newMenuItem) => {
         setIsLoading(true);
+        console.log(newMenuItem);
 
         await fetch('http://localhost:8000/api/v1/menu', {
-            method: 'POST',
-            mode: 'cors',
-            body: getPreparedData(newMenuItem),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
-            }
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify(newMenuItem),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+                }
             }
         )
         .then(res => res.json())

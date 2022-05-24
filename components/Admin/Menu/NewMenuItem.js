@@ -48,7 +48,7 @@ const NewMenuItem = ({ onAddMenuItem }) => {
         }
 
         console.log('image', image);
-        console.log(menuItemDetails);
+        // console.log(menuItemDetails);
 
         onAddMenuItem(menuItemDetails);
 

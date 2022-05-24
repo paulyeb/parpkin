@@ -26,35 +26,37 @@ const useCategories = () => {
 
     }
 
-    const addCategory = async (newCategory) => {
+    const addCategory = (newCategory) => {
         setIsLoading(true);
+        console.log('NEW CATEGORY DATA: ', newCategory);
+        newCategory = getPreparedData(newCategory);
 
-        await fetch('http://localhost:8000/api/v1/categories', {
-            method: 'POST',
-            mode: 'cors',
-            body: JSON.stringify(newCategory),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('api_token')}`
-            }
+        fetch('http://localhost:8000/api/v1/categories/', {
+                method: 'POST',
+                // mode: 'cors',
+                body: newCategory,
+                headers: {
+                    // 'Accept': "multipart/form-data",
+                    // 'Content-Type': "multipart/form-data",
+                    // 'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('api_token')}`
+                }
             }
         )
         .then(res => res.json())
         .then(data => {
+            console.log(data),
             fetchCategories();
+            setIsLoading(false);
         })
-        .catch((err) => console.log(err));
-
-        setIsLoading(false);
-
+        .catch((error) => console.log(error))
     }
 
     const updateCategory = (newCategory) => {
         fetch(`http://localhost:8000/api/v1/categories/${id}`, {
             method: 'PUT',
             mode: 'cors',
-            body: JSON.stringify(newCategory),
+            body: getPreparedData(newCategory),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -68,6 +70,15 @@ const useCategories = () => {
         })
         .catch((err) => console.log(err));
 
+    }
+
+    const getPreparedData = (data) => {
+        let formData = new FormData();
+
+        formData.append('name', data['name'])
+        formData.append('image', data['image'])
+
+        return formData;
     }
     
     return { categories, addCategory, updateCategory, isLoading };

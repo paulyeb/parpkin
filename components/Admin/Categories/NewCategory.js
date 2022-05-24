@@ -23,7 +23,7 @@ const NewCategory = ({ onAddCategory}) => {
 
         onAddCategory(categoryInfo);
         
-        }
+    }
 
     return(
         <form className="p-5" onSubmit={addNewCategoryHandler}>
@@ -45,6 +45,7 @@ const NewCategory = ({ onAddCategory}) => {
                 </label>
                 <input 
                     type="file" 
+                    name="image"
                     className="mb-5 w-full font-medium border border-gray-400 rounded outline-none focus:outline-none block p-2"
                     onChange={imageHandler}
                 />

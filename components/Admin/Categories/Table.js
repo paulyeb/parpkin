@@ -18,7 +18,9 @@ const Table = ({ categories }) => {
                     <tr key={category.id}>
                         <td className="border border-gray-400 p-2 w-3">{index + 1}</td>
                         <td className="border border-gray-400 p-2">{category.name}</td>
-                        <td className="border border-gray-400 p-2">{category.name}</td>
+                        <td className="border border-gray-400 p-2">
+                            <img src={`http://localhost:8000/${category.image}`} alt={category.name} className="w-20 h-30" />    
+                        </td>
                         <td className="border border-gray-400 p-2 text-center">
                             <button>
                                 <FontAwesomeIcon className="mx-1 px-3 py-3 border hover:ring-1 focus:ring-4 rounded-lg" icon={faPen} />

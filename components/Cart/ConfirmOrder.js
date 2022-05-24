@@ -27,7 +27,7 @@ const ConfirmOrder = ({dismissConfirmOrder}) => {
                 </div>
 
                 {order.map(orderedItem => 
-                <div className="flex p-2 mx-2 border-b" key={orderedItem.id}>
+                <div className="flex p-1 mx-2 border-b" key={orderedItem.id}>
                     <div className="">
                         <Image 
                         src={orderedItem.image}
@@ -36,12 +36,12 @@ const ConfirmOrder = ({dismissConfirmOrder}) => {
                         className="border-2 m-2"
                         />
                     </div>
-                    <div className="ml-6 flex flex-col justify-between items-between w-full">
+                    <div className="ml-3 flex flex-col justify-between items-between w-full">
                         <div className="flex justify-between">
                             <p>{orderedItem.description}</p>
                         </div>
 
-                        <div className="mt-5 flex justify-between items-center text-gray-900">
+                        <div className="mt-2 flex justify-between items-center text-gray-900">
                             <p>Qty: {state.quantity}</p>
                             <p className="px-4">{orderedItem.price}</p>   
                         </div>

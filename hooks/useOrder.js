@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useOrder = () => {
+export default () => {
     const [orders, setOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -52,5 +52,3 @@ const useOrder = () => {
     return { orders, addNewOrder, isLoading }
     
 }
-
-export default useOrder;

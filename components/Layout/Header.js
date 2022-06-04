@@ -5,15 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faBars  } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState,  useContext } from "react";
 import Cart from "../Cart/Cart";
-import { useContext } from "react";
 import { CartContext } from "../../store/cart-context";
+import { useRouter } from "next/router";
+import { dropdownContext } from "../../store/dropdown-context";
 
-const Header = () => {
+export default () => {
+    const {dispatch} = useContext(dropdownContext);
+
+    const active = "active lg:inline-block hidden visited:border-b lg:mx-10 lg:py-2 lg:px-4 text-gray-800 no-underline font-medium text-xl hover:font-bold";
+
+    const inactive = "lg:inline-block hidden visited:border-b lg:mx-10 lg:py-2 lg:px-4 text-gray-800 no-underline font-medium text-xl hover:font-bold";
+    
+    const router = useRouter();
     const {state} = useContext(CartContext);
     const [signIn, setSignIn] = useState(true);
     const [displayCart, setDisplayCart] = useState(false);
+    
+    const totalItemsInCart = state.cart
+        .map(items => items.quantity)
+        .reduce((partialSum, a) => partialSum + a, 0);
 
     const displayCartHandler = () => {
         setDisplayCart(true);
@@ -24,7 +36,9 @@ const Header = () => {
             <div className="lg:container lg:mx-auto flex flex-wrap lg:justify-between justify-between items-center">
                 <div className="lg:hidden">
                     <button 
-                        onClick={() => console.log('menu icon check')} 
+                        onClick={() => dispatch({
+                            type: "toggle"
+                        })} 
                         className="text-yellow-300 no-underline hover:no-underline font-extrabold mt-2"
                     >
                         <FontAwesomeIcon icon = {faBars} style={{height: '25px', color: 'gray' }}  />
@@ -51,13 +65,13 @@ const Header = () => {
                 
                 <div className="hidden lg:inline-block">
                     <Link href="/menu">
-                        <a className="lg:inline-block hidden visited:border-b lg:mx-10 lg:py-2 lg:px-4 text-gray-800 hover:border-b hover:border-gray-800 no-underline font-medium text-xl">
+                        <a className={`${router.pathname == "/menu" ? active : inactive}`}>
                             Menu
                         </a>
                     </Link>
 
                     <Link href="/specialOffers">
-                        <a className="lg:inline-block hidden lg:mx-10 lg:py-2 lg:px-4 text-gray-800 hover:border-b hover:border-gray-800 no-underline font-medium text-xl">
+                        <a className={`${router.pathname == "/specialOffers" ? active : inactive}`}>
                             Special Offers
                         </a>
                     </Link>
@@ -82,14 +96,19 @@ const Header = () => {
                             </li>
                         }
                         
-                        <button className="flex border md:py-1 md:px-2 p-1 rounded-lg shadow" onClick={displayCartHandler}> 
+                        <button 
+                            className="flex border md:py-1 md:px-2 p-1 rounded-lg shadow active:bg-gray-300 hover:bg-gray-100 mb-2" 
+                            onClick={displayCartHandler}
+                        > 
                             <div 
                                 className="lg:inline-block text-gray-800 no-underline font-medium text-lg mx-2 pt-1"
                             >
-                                <FontAwesomeIcon icon = {faCartShopping} style={{height: '20px', color: 'grey' }}
+                                <FontAwesomeIcon 
+                                    icon = {faCartShopping} 
+                                    style={{height: '20px', color: 'grey' }}
                                 />
                             </div>
-                            <span className="text-gray-800 font-medium md:text-lg">{state.quantity}</span>  
+                            <span className="text-gray-800 font-medium md:text-lg">{totalItemsInCart}</span> 
                         </button>
                         {
                             displayCart ? <Cart dismissCart={() => setDisplayCart(false)} /> : null
@@ -100,5 +119,3 @@ const Header = () => {
         </nav>
     )
 }
-
-export default Header;

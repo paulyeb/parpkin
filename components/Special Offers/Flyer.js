@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const SpecialOffersFlyer = () => {
     return(
-        <div className="bg-gray-800 mt-5 text-gray-200">
+        <div className="bg-gray-800 mt-5 pb-5 text-gray-200">
             <div className="container ml-25 p-10 font-medium text-4xl">
                 {`Deals & Special Offers`}
             </div>

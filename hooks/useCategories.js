@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useCategories = () => {
+export default () => {
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -81,7 +81,5 @@ const useCategories = () => {
         return formData;
     }
     
-    return { categories, addCategory, updateCategory, isLoading };
+    return { categories, addCategory, updateCategory, fetchCategories, isLoading };
 }
-
-export default useCategories;

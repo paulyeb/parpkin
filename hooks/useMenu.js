@@ -1,31 +1,54 @@
 import { useState, useEffect } from "react";
 import { request }  from '../helpers';
 
-const useMenu = () => {
+export default () => {
     const [allMenu, setAllMenu] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [paginationData, setPaginationData] = useState(null);
 
     useEffect(() => {
-        fetchMenu();
+        fetchMenus({
+            per_page: 4,
+        });
     }, []);
 
-    const fetchMenu = () => {
+    const fetchMenus = (params) => {
         setIsLoading(true);
         
-        request.get('menu', (data) => {
+        request.get('menu', '', (data) => {
             console.log(data),
-            setAllMenu(data)
+            setAllMenu(data.data)
+            setPaginationData({
+                disablePreviousButton: !data.prev_page_url,
+                disableNextButton: data.current_page === data.last_page,
+                lastPage: data.last_page,
+                currentPage: data.current_page,
+                total: data.total,
+                perPage: data.per_page,
+                from: data.from,
+                to: data.to,
+            });
             setIsLoading(false);
-        }); 
+        }, params); 
     }
 
     const addMenuItem = (newMenuItem) => {
         setIsLoading(true);
 
-        request.post('menu', newMenuItem, (data) => {
-            fetchMenu();
+        request.post('menu', '', newMenuItem, (data) => {
+            fetchMenus();
             setIsLoading(false);
             console.log('THIS IS THE MENU: ', data);
+        }, true);
+    }
+
+    const updateMenuItem = (id, updatedMenuDetails) => {
+        setIsLoading(true);
+
+        request.put('menu', id, updatedMenuDetails, (data) => {
+            fetchMenus();
+            setIsLoading(false);
+            console.log('THIS THE UPDATED MENU: ', data);
         }, true);
     }
 
@@ -41,7 +64,5 @@ const useMenu = () => {
     //     return formData;
     // };
     
-    return {allMenu, addMenuItem, isLoading};
+    return {allMenu, addMenuItem, updateMenuItem, fetchMenus, isLoading, paginationData};
 }
-
-export default useMenu;

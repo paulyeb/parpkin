@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import useUser from "../../hooks/useUser";
+import {useUser} from "../../hooks";
 
 const SignIn = () => {
     const { login, isLoading } = useUser();

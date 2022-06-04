@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Sidebar = () => {
+export default () => {
     return(
         <div className="container fixed top-30 h-full w-60 hidden lg:block bg-gray-50 flex flex-col  px-12 text-center">
             <Image 
@@ -65,5 +65,3 @@ const Sidebar = () => {
         </div>
     )
 }
-
-export default Sidebar;

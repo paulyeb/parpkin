@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const MetaData = ({ title }) => {
+export default ({ title }) => {
     return(
         <Head>
             <title>{title}</title>
@@ -8,5 +8,3 @@ const MetaData = ({ title }) => {
         </Head>
     )
 }
-
-export default MetaData;

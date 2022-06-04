@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const useUser = () => {
+export default () => {
     const router = useRouter();
 
     const [users, setUsers] = useState([]);
@@ -97,5 +97,3 @@ const useUser = () => {
     return { users, addNewUser, login, logout, isLoading }
     
 }
-
-export default useUser;

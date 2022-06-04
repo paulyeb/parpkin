@@ -1,6 +1,7 @@
 const baseUrl = 'http://localhost:8000/api/v1/';
 
-const url = (endpoint, params = {}) => baseUrl + endpoint + new URLSearchParams(params);
+const url = (endpoint, id = '', params = {}) => baseUrl + endpoint + id + '?' + new URLSearchParams(params);
+const putUrl = (endpoint, id = '') => baseUrl + endpoint + '/' + id ;
 
 const parseBody = (body, isFormData = false) => {
     if (! isFormData) {
@@ -17,8 +18,8 @@ const parseBody = (body, isFormData = false) => {
 };
 
 export default {
-    get(endpoint, callback, params = {}) {
-        fetch(url(endpoint, params), {
+    get(endpoint, id = '', callback, params = {}) {
+        fetch(url(endpoint, id, params), {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -34,8 +35,8 @@ export default {
         .catch((error) => console.log(error))
     },
 
-    post(endpoint, body, callback, isFormData = false) {
-        fetch(url(endpoint), {
+    post(endpoint, id = '', body, callback, isFormData = false) {
+        fetch(url(endpoint, id), {
             method: 'POST',
             body: parseBody(body, isFormData),
             headers: {
@@ -51,8 +52,22 @@ export default {
         .catch((error) => console.log(error))
     },
 
-    put() {
-
+    put(endpoint, id = '', body, callback, isFormData = false) {
+        fetch(putUrl(endpoint, id), {
+            method: 'PUT',
+            body: parseBody(body, isFormData),
+            // mode: 'cors',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('api_token')}`,
+                // 'Content-Type': 'multipart/form-data'
+            }
+        })
+        .then(data => {
+            if(callback) {
+                callback(data);
+            }
+        })
+        .catch((error) => console.log(error))
     },
 
     delete() {

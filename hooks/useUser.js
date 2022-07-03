@@ -46,7 +46,6 @@ export default () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setUsers(data);
                 setIsLoading(false);
             });
@@ -67,7 +66,6 @@ export default () => {
                 .then(data => {
                     localStorage.setItem('api_token', (data.api_token)),
                     localStorage.setItem('username', (data.data.firstname)),
-                    console.log(data);
                     setIsLoading(false);
                 }) 
                 .catch((error) => {

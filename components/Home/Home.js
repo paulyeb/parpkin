@@ -1,4 +1,4 @@
-import {Header, PlaceOrderBar, Footer, MetaData, Backdrop, Dropdown} from "../Layout";
+import {Header, PlaceOrderBar, Footer, MetaData, Dropdown} from "../Layout";
 import Showcase from "./Showcase";
 import Categories from "../Categories/Categories";
 import SpecialOffersFlyer from "../Special Offers/Flyer";
@@ -12,13 +12,12 @@ const Home = () => {
         <>
             <MetaData title={`Parpkin Shawarma-Burger-Pizza-Fries`} />
             <Header />
-            {state.state ? <Dropdown />: null}
+            {state.dropdown ? <Dropdown />: null}
             <PlaceOrderBar />
             <Showcase />
             <Categories />
             <SpecialOffersFlyer />
             <Footer />
-            {/* <Backdrop>Still a cant beeive id</Backdrop> */}
         </>
     )
 }

@@ -7,7 +7,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 export default () => {
     return(
         <div className="text-white bg-gray-800 lg:px-20 2xl:pt-10 pt-2 2xl:pb-10 mt-0">
-            <div className="container lg:flex lg:flex-row lg:justify-start md:flex-wrap lg:items-start grid grid-cols-3 gap-4">
+            <div className="container lg:flex lg:flex-row lg:justify-around 2xl:flex-wrap lg:items-start grid grid-cols-3 gap-4">
                 <div className="lg:inline hidden">
                 <Image 
                     src="/images/company logo/BUSINESS LOGO-1.png"

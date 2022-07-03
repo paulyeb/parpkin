@@ -28,7 +28,7 @@ const Menu = () => {
 
     return(
         <div>
-            {state.state ? <Dropdown /> : null}
+            {state.dropdown ? <Dropdown /> : null}
             {/* {<div className="mx-2 text-gray-600">
                 <div className="border-b p-2 hover:bg-gray-200 cursor-pointer">Home</div>
                 <div className="border-b p-2 hover:bg-gray-200 cursor-pointer">Sign In | My Account</div>
@@ -79,9 +79,9 @@ const Menu = () => {
                     
                     {
                         categories.map(category => 
-                            <div key={category.id} className="px-4 bg-gray-50 lg:mt-4 mt-10">
+                            <div key={category.id} className=" bg-gray-50 lg:mt-4 mt-10">
                                 <div id={category.name.toLowerCase()}>
-                                    <div className="py-10 text-4xl font-bold text-xl">
+                                    <div className="py-10 text-4xl font-bold text-xl text-center underline">
                                         {category.name.toUpperCase()}
                                     </div>
                                     <div className="grid lg:grid-cols-3 lg:gap-6">
@@ -93,7 +93,6 @@ const Menu = () => {
                                                 name={menuItem.name}
                                                 price={menuItem.price}
                                                 description={menuItem.description}
-                                                className="overflow-hidden"
                                             />
                                         )}
                                     </div>    

@@ -20,8 +20,7 @@ export default () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data),
-                setOrders(data)
+                setOrders(data);
                 setIsLoading(false);
             }) 
             
@@ -42,8 +41,7 @@ export default () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data),
-                setOrders(data)
+                setOrders(data);
                 setIsLoading(false);
             }) 
             

@@ -1,11 +1,10 @@
-import { createContext } from "react";
-import { useReducer } from "react";
+import { createContext, useReducer } from "react";
 import { dropdownReducer } from "../reducers/dropdownReducer"
 
 export const dropdownContext = createContext();
 
 const initialState = {
-    state: false
+    dropdown: false
 }
 
 const DropdownProvider = ({children}) => {

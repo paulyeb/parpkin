@@ -9,7 +9,7 @@ const SpecialOffers = () => {
         <>
             <MetaData title={`Parpkin | Special Offers`} />
             <Header />
-            {state.state ? <Dropdown /> : null}
+            {state.dropdown ? <Dropdown /> : null}
             <PlaceOrderBar />
             <SpecialOfferItem />
             <Footer />

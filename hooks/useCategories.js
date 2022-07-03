@@ -45,7 +45,6 @@ export default () => {
         )
         .then(res => res.json())
         .then(data => {
-            console.log(data),
             fetchCategories();
             setIsLoading(false);
         })

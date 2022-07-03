@@ -20,9 +20,9 @@ const ConfirmOrder = ({dismissConfirmOrder}) => {
         details: orderedItem.description
     }));
 
-    console.log(orderDetails);
+    // console.log(orderDetails);
     
-    console.log(order);
+    // console.log(order);
     const subtotal = order.map(item => item.price).reduce((partialSum, a) => partialSum + a, 0)
     const deliveryFee = 0.00;
     const total = subtotal + deliveryFee;
@@ -34,7 +34,7 @@ const ConfirmOrder = ({dismissConfirmOrder}) => {
     return (
         <Backdrop>
             <CartBackground>
-                <div className="m-2 flex justify-between items-center border-b mt-4">
+                <div className="m-2 flex justify-between sticky top-0 bg-white items-center border-b">
                     <div className="mx-2 text-gray-800 text-lg my-3 font-medium px-2">
                         ORDER SUMMARY
                     </div>
@@ -51,19 +51,18 @@ const ConfirmOrder = ({dismissConfirmOrder}) => {
                     <div className="">
                         <img 
                         src={orderedItem.image}
-                        // width={90}
-                        // height={70}
-                        className="border rounded-lg m-2 h-30 w-20"
+                        className="border object-cover rounded-lg m-2 h-20 w-20"
                         />
                     </div>
                     <div className="ml-3 flex flex-col justify-between items-between w-full">
-                        <div className="flex justify-between">
-                            <p>{orderedItem.description}</p>
+                        <div className="flex flex-col justify-between pt-1">
+                            <p className="font-medium">{orderedItem.name}</p>
+                            <p className="w-80">{orderedItem.description}</p>
                         </div>
 
-                        <div className="mt-2 flex justify-between items-center text-gray-900">
-                            <p>Qty: {orderedItem.quantity}</p>
-                            <p className="px-4">{orderedItem.price}</p>   
+                        <div className="mt-2 flex justify-between items-center text-gray-900 pb-2">
+                            <p className="font-medium">Qty: {orderedItem.quantity}</p>
+                            <p className="px-4 font-medium">{orderedItem.price}.00</p>   
                         </div>
                     </div>
                 </div>

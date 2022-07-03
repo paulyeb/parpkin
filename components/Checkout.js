@@ -1,4 +1,5 @@
-import {useCheckout} from "../hooks";
+import useCheckout from "../hooks/useCheckout";
+
 
 const Checkout = () => {
     const {dataFromFlutterWave} = useCheckout();

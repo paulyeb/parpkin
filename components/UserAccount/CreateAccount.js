@@ -122,7 +122,7 @@ const CreateAccount = () => {
                             className="outline-none text-white text-xl mt-6 mb-3 py-3 lg:py-3 lg:px-10 w-2/4 lg:w-auto bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 font-medium rounded-3xl"
                             type="submit"
                         >
-                            {isLoading ? 'Loading...' : 'Sign Up'}
+                            {'Sign Up'}
                         </button>
                         <p 
                             className="text-sm text-gray-800 mt-1 mb-5"
@@ -131,7 +131,7 @@ const CreateAccount = () => {
                         </p>
                         <Link href="/"> 
                             <a
-                                className="outline-none border border-gray-800 lg:text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl"
+                                className="outline-none border active:bg-yellow-500 border-gray-800 lg:text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl"
                             >
                                 Skip, Continue As Guest
                             </a>

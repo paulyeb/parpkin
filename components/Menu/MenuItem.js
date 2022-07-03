@@ -5,14 +5,14 @@ const MenuItem = ({ image, name, price, description, id }) => {
     const {state, dispatch} = useContext(CartContext);
 
     return(
-        <div className="max-w-sm rounded-lg mb-6 dark:bg-gray-800 dark:border-gray-700">
+        <div className="flex flex-col justify-center items-center text-center max-w-sm rounded-lg mb-6 dark:bg-gray-800 dark:border-gray-700">
             <img 
                 src={image} 
-                className="objectFit w-72 h-60 rounded-2xl" 
+                className="object-cover w-60 h-60 rounded-full" 
             />
-            <h5 className="mb-1 p-5 dark:text-white h-48">
+            <h5 className="mb-1 p-5 dark:text-white h-44">
                 <div className="text-gray-900 font-bold text-xl ">{name}</div>
-                <div className="text-gray-700 font-bold text-xl ">GHS {price}</div>
+                <div className="text-gray-700 font-bold text-xl ">GHS {price}.00</div>
                 <div className="text-gray-600 font-medium text-lg break-normal">{description}</div>
             </h5>
             <div>

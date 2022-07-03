@@ -2,7 +2,7 @@ export const dropdownReducer = (state, action) => {
     switch(action.type) 
     {
         case "toggle" :
-            return {...state, state: !state.state}
+            return {...state, dropdown: !state.dropdown}
         default :
             return state;
     }

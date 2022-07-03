@@ -23,9 +23,7 @@ export default () => {
     const [signIn, setSignIn] = useState(true);
     const [displayCart, setDisplayCart] = useState(false);
     
-    const totalItemsInCart = state.cart
-        .map(items => items.quantity)
-        .reduce((partialSum, a) => partialSum + a, 0);
+    const totalItemsInCart = state.cart.map(items => items.quantity).reduce((partialSum, a) => partialSum + a, 0);
 
     const displayCartHandler = () => {
         setDisplayCart(true);

@@ -16,8 +16,7 @@ export default () => {
         setIsLoading(true);
         
         request.get('menu', '', (data) => {
-            console.log(data),
-            setAllMenu(data.data)
+            setAllMenu(data.data);
             setPaginationData({
                 disablePreviousButton: !data.prev_page_url,
                 disableNextButton: data.current_page === data.last_page,
@@ -38,7 +37,6 @@ export default () => {
         request.post('menu', '', newMenuItem, (data) => {
             fetchMenus();
             setIsLoading(false);
-            console.log('THIS IS THE MENU: ', data);
         }, true);
     }
 
@@ -48,7 +46,6 @@ export default () => {
         request.put('menu', id, updatedMenuDetails, (data) => {
             fetchMenus();
             setIsLoading(false);
-            console.log('THIS THE UPDATED MENU: ', data);
         }, true);
     }
 

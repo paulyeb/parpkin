@@ -70,7 +70,7 @@ const SignIn = () => {
                             className="outline-none text-white text-xl m-6 py-3 lg:py-3 lg:px-10 w-2/4 lg:w-auto bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-600 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 font-medium rounded-3xl"
                             type="submit"
                         >
-                            {isLoading ? 'Loading...' : 'Get In'}
+                            {'Sign In'}
                         </button>
                         <p 
                             className="text-sm text-gray-800 m-3"
@@ -83,7 +83,7 @@ const SignIn = () => {
                             or
                         </p>
                         <Link href="/">
-                            <a className="outline-none border border-gray-800 text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl">
+                            <a className="outline-none border border-gray-800 active:bg-yellow-500 text-xl m-4 py-3 lg:py-3 lg:px-10 px-5 w-4/5 lg:w-3/5 font-medium rounded-3xl">
                                 Skip, Continue As Guest
                             </a>
                         </Link>  

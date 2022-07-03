@@ -3,7 +3,7 @@ import {useCategories} from "../../hooks"
 
 const Categories = () => {
     const {categories} = useCategories(); 
-    console.log(categories);
+    
     return(
         <div className="container flex flex-col px-3">
             <div className="flex justify-between items-center">

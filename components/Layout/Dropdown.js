@@ -12,30 +12,30 @@ export default () => {
             {home ? null 
                 : <Link href="/">
                     <a>
-                        <div className="border-b p-2 hover:bg-gray-50 cursor-pointer">Home</div>
+                        <div className="border-b border-t border-r py-2 px-3 font-medium active:bg-yellow-300 hover:bg-gray-50 cursor-pointer">Home</div>
                     </a>
                 </Link>
             }
             <Link href="/sign_in">
                 <a>
-                    <div className="border-b p-2 hover:bg-gray-50 cursor-pointer">My Parpkin Account</div>
+                    <div className="border-b border-r border-t py-2 px-3 font-medium active:bg-yellow-300 hover:bg-gray-50 cursor-pointer">My Parpkin Account</div>
                 </a>    
             </Link>
             {menu ? null 
                 : <Link href="/menu">
                     <a>
-                        <div className="border-b p-2 hover:bg-gray-50 cursor-pointer">Menu</div>
+                        <div className="border-t border-b border-r py-2 px-3 font-medium active:bg-yellow-300 hover:bg-gray-50 cursor-pointer">Menu</div>
                     </a>
                 </Link>
             }
             {specialOffers ? null 
                 : <Link href="/specialOffers">
                     <a>
-                        <div className="border-b p-2 hover:bg-gray-50 cursor-pointer">Special Offers</div>
+                        <div className="border-t border-b border-r py-2 px-3 font-medium active:bg-yellow-300 hover:bg-gray-50 cursor-pointer">Special Offers</div>
                     </a>
                 </Link>
             }
-            <div className="border-b p-2 hover:bg-gray-50 cursor-pointer">Logout</div>
+            <div className="border-b border-t border-r py-2 px-3 font-medium active:bg-yellow-300 hover:bg-gray-50 cursor-pointer">Logout</div>
         </div>
     </>
 }
